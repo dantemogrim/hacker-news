@@ -1,6 +1,6 @@
 # Hacker News
 
-<img src="https://media.giphy.com/media/Ui46FI4nHWyD6/giphy.gif" width="75%">
+<img src="https://media.giphy.com/media/oVvhEYvWDvE1G/giphy.gif" width="75%">
 
 ## About
 
