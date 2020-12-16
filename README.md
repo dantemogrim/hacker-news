@@ -4,7 +4,7 @@
 
 ## About
 
-<br>
+Text about this project...
 
 ## Coding languages
 
@@ -14,8 +14,6 @@
 - PHP
 - SQL
 
-<br>
-
 ## Instructions
 
 1. Clone or fork this repository to your computer.
@@ -23,14 +21,10 @@
 3. Create a local server by using the following command: ```php -S localhost:8000/index.php````
 4. Open your browser of choice, write the name of your localhost in the url followed by `/index.php` and access the project from there.
 
-<br>
-
 ## Testers
 
 - [Person 1](https://github.com/mogrim-91)
 - [Person 2](https://github.com/mogrim-91)
-
-<br>
 
 ## Code Review
 
@@ -47,14 +41,12 @@
 - [ ] That
   > "Comment" - Person 3
 
-<br>
-
 ## Creators
 
 - [Dante Mogrim](https://github.com/mogrim-91)
 
-<br>
-
 ## License
 
 - [MIT](https://en.wikipedia.org/wiki/MIT_License)
+
+## Credentials
