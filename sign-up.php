@@ -1,4 +1,8 @@
 <!-- Login form -->
+<a class="nav-link" href="/index.php">Home</a>
+<a class="nav-link" href="/faq.php">FAQ</a>
+<link rel="stylesheet" href="/assets/styles/app.css">
+
 
 <form>
 
@@ -22,4 +26,4 @@
 
 </form>
 
-<p>New? Click <b><u>here</u></b> to create an account.</p>
+<p>New here? Click <b><u>here</u></b> to create an account.</p>
