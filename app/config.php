@@ -6,5 +6,5 @@ declare(strict_types=1);
 
 return [
     'title' => 'The Hacktivist Report',
-    'database_path' => sprintf('sqlite:%s/database/database.db', __DIR__),
+    'database_path' => sprintf('sqlite:%s/database/test.db', __DIR__),
 ];
