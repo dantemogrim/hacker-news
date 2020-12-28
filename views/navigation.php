@@ -9,7 +9,11 @@
       </li><!-- /nav-item -->
 
       <li class="nav-item">
-          <a class="nav-link" href="/sign-up.php">Sign up</a>
+          <a class="nav-link" href="">Best voted/Newest</a>
+      </li><!-- /nav-item -->
+
+      <li class="nav-item">
+          <a class="nav-link" href="/sign-in.php">Sign in</a>
       </li><!-- /nav-item -->
   </ul><!-- /navbar-nav -->
 </nav><!-- /navbar -->
