@@ -1,7 +1,17 @@
-/* In this file you can add your custom styles. */
+/* Custom styles. */
+
+/* Variable functions */
+:root {
+  --bgColor: #3f3f74;
+  --borderColor: hotpink;
+  --buttonColor: royalblue;
+  --headerColor: mediumpurple;
+  --mainColor: mediumaquamarine;
+  --textColors: white;
+}
 
 body {
-  background-color: rgb(20, 20, 20);
+  background-color: var(--bgColor);
   color: white;
 }
 
