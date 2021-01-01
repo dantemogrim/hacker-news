@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <!-- Title -->
     <title><?php echo $config['title']; ?></title>
         <!-- General CSS insertion. -->
     <link rel="stylesheet" href="../assets/styles/app.css">
@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../assets/styles/media.css">
         <!-- Modern-Normalize CSS insertion. -->
     <link rel="stylesheet" href="../assets/styles/modern-normalize.css">
+        <!-- Favicon -->
+    <link rel="icon" type="images/png" href="../media/faviconTest.ico">
 </head>
 
 <body>
