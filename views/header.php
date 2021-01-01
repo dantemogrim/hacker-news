@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title><?php echo $config['title']; ?></title>
-
-    <link rel="stylesheet" href="/assets/styles/app.css">
+        <!-- General CSS insertion. -->
+    <link rel="stylesheet" href="../assets/styles/app.css">
+        <!-- @font-face insertion. -->
+    <link rel="stylesheet" href="../assets/styles/fonts.css">
+        <!-- Media queries insertion. -->
+    <link rel="stylesheet" href="../assets/styles/media.css">
+        <!-- Modern-Normalize CSS insertion. -->
+    <link rel="stylesheet" href="../assets/styles/modern-normalize.css">
 </head>
 
 <body>

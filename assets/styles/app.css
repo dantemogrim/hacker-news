@@ -1,8 +1,8 @@
 /* In this file you can add your custom styles. */
 
 body {
-  background-color: black;
-  color: cornsilk;
+  background-color: rgb(20, 20, 20);
+  color: white;
 }
 
 header {
@@ -10,4 +10,14 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li.nav-item {
+  width: 10vw;
 }

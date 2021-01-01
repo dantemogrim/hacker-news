@@ -1,0 +1,18 @@
+/* Different formats on Comic Sans for optimal browser coverage. */
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: local(".../resources/fonts/JetBrainsMono-Regular.eot")
+      format("embedded-opentype"),
+    local(".../resources/fonts/JetBrainsMono-Regular.ttf") format("truetype"),
+    local(".../resources/fonts/JetBrainsMono-Regular.woff") format("woff"),
+    local(".../resources/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Applies the same font to all the text on the site, plus fallback fonts. */
+
+* {
+  font-family: "JetBrains Mono", Verdana, Arial, Helvetica, sans-serif;
+}
