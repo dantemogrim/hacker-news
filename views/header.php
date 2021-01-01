@@ -18,7 +18,7 @@
 
 <body>
 <header>
-    <img class="header-img" src="./resources/media/hacker.jpg" width="20%">
+    <img class="header-img" src="./resources/media/headerTest.svg">
     <h1><?php echo $config['title']; ?></h1>
 </header>
 

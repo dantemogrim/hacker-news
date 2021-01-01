@@ -2,22 +2,18 @@
 
 <nav>
 
-    <a class="nav-link" href="/index.php">Home</a>
+    <a class="navLink" href="/index.php">Home</a>
+
+
+    <a class="navLink" href="/faq.php">FAQ</a>
+
+
+    <a class="navLink" href="">Best voted/Newest</a>
+
+
+    <a class="navLink" href="/sign-in.php">Sign in</a>
     
 
-
-    <a class="nav-link" href="/faq.php">FAQ</a>
-    
-
-
-    <a class="nav-link" href="">Best voted/Newest</a>
-    
-
-
-    <a class="nav-link" href="/sign-in.php">Sign in</a>
-    
-
-
-    <a class="user-avatar" href=""><img src="./resources/media/user.png"></a>
+    <a class="navAvatarLink" href=""><img class="userIcon" src="./resources/media/user-circle.png"></a>
 
 </nav>

@@ -12,12 +12,21 @@ header {
   text-align: center;
 }
 
+img.header-img {
+  padding-top: 2%;
+  width: 50vw;
+}
+
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-li.nav-item {
-  width: 10vw;
+a {
+  color: white;
+}
+
+img.userIcon {
+  width: 4vw;
 }
