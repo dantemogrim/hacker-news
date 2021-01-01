@@ -27,6 +27,10 @@ a {
   color: white;
 }
 
+a:hover {
+  color: hotpink;
+}
+
 img.userIcon {
   width: 4vw;
 }
