@@ -1,6 +1,6 @@
 <!-- Sign in form. -->
-<a class="nav-link" href="/index.php">Home</a>
-<a class="nav-link" href="/faq.php">FAQ</a>
+<a class="navLink" href="../index.php">Home</a>
+<a class="navLink" href="../views/faq.php">FAQ</a>
 <link rel="stylesheet" href="/assets/styles/app.css">
 
 
@@ -27,4 +27,4 @@
 </form>
 
 <p>Are you new to our site?</p>
-<p>Click <a class="sign-up-link" href="/sign-up.php"><b><u>here</u></b></a> to create an account.</p>
+<p>Click <a class="sign-up-link" href="../views/sign-up.php"><b><u>here</u></b></a> to create an account.</p>

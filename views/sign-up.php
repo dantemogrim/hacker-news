@@ -1,6 +1,6 @@
 <!-- Sign up form. -->
-<a class="nav-link" href="/index.php">Home</a>
-<a class="nav-link" href="/faq.php">FAQ</a>
+<a class="navLink" href="../index.php">Home</a>
+<a class="navLink" href="../views/faq.php">FAQ</a>
 <link rel="stylesheet" href="/assets/styles/app.css">
 
 <p>Welcome, stranger!</p>
