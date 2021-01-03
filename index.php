@@ -1,6 +1,9 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 
+<main>
+
+
 <article>
     <p>This is the home page.</p>
     <span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -14,5 +17,7 @@
         Incidunt dolorem consequatur temporibus, provident commodi nihil quidem.
     </span>
 </article>
+
+</main>
 
 <?php require __DIR__ . '/views/footer.php'; ?>

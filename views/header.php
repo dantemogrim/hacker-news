@@ -17,11 +17,11 @@
         <!-- Modern-Normalize CSS insertion. -->
     <link rel="stylesheet" href="../assets/styles/modern-normalize.css">
         <!-- Favicon -->
-    <link rel="icon" type="images/png" href="../media/faviconTest.ico">
+    <link rel="icon" type="image/svg+xml" href="../resources/media/favicon.svg" />
 </head>
 
 <body>
-    
+
 <header>
 
     <img class="header-img" src="./resources/media/headerTest.svg">

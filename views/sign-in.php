@@ -1,6 +1,5 @@
 <!-- Sign in form. -->
-<a class="navLink" href="../index.php">Home</a>
-<a class="navLink" href="../views/faq.php">FAQ</a>
+<a class="navLink" href="/index.php">Home</a>
 <link rel="stylesheet" href="/assets/styles/app.css">
 
 

@@ -2,8 +2,8 @@
 
 /* Variable functions */
 :root {
-  --bgColor: #3f3f74;
-  --hamburgerColor: #292952;
+  --bgColor: #282828;
+  --hamburgerColor: #292929;
   --buttonColor: royalblue;
   --headerColor: mediumpurple;
   --mainColor: mediumaquamarine;
@@ -12,35 +12,38 @@
 
 body {
   background-color: var(--bgColor);
-  color: white;
+  color: #f8f9f3;
+  margin: 5%;
 }
 
-header {
+.header-img,
+h1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
-img.header-img {
-  padding-top: 2%;
+.header-img {
   width: 50vw;
 }
 
 nav {
+  padding: 2%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+header,
+nav {
+  background-color: #323232;
 }
 
 a {
-  color: white;
+  color: #f8f9f3;
+  text-decoration: none;
 }
 
 a:hover {
   color: hotpink;
-}
-
-img.userIcon {
-  width: 4vw;
 }
