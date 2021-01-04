@@ -6,8 +6,7 @@
 
 This is an individual school assignment in PHP. We were supposed to create a new and improved clone of the website [Hacker News](https://news.ycombinator.com/news). The project had to include all default features and meet all the requirements mentioned below:
 
-<details><summary> :scroll:<b>The project was meant to include the following features:</b></summary>
-
+<details><summary> :scroll:<b>The project had to include the following user stories:</b></summary>
 
 - As a user I should be able to create an account.
 - As a user I should be able to login.
@@ -27,7 +26,6 @@ This is an individual school assignment in PHP. We were supposed to create a new
 
 </details>
 
-
 <details><summary> :books: <b>Followed by requirements consisting of:</b> </summary>
 
 - The application should be written in HTML, CSS, JavaScript, SQL and PHP.
@@ -44,37 +42,41 @@ This is an individual school assignment in PHP. We were supposed to create a new
 
 </details>
 
-## Instructions
+## :octocat: Instructions
+
 1. Clone or fork this repository to your computer.
 2. Open up your terminal and `cd` into the project folder.
 3. Create a local server by using the following command: `php -S localhost:8000/index.php`
 4. Open in your browser, write the name of your localhost in the url followed by `/index.php` and access the project from there.
 
-## Testers
+## :computer: Testers
+
 - [Person 1](https://github.com/mogrim-91)
 - [Person 2](https://github.com/mogrim-91)
 
-## Code Review
+## :mag: Code Review
+
 - By [Person 3](https://github.com/mogrim-91)
-- [ ] This
-- [ ] That
-- [ ] This
-- [ ] That
-- [ ] That
-- [ ] That
-- [ ] That
-- [ ] That
-- [ ] That
-- [ ] That
+- [ ] **style.css:L3**This
+- [ ] **index.php:L54** This thing
+- [ ] Third
+- [ ] Fourth
+- [ ] Fifth
+- [ ] Sixth
+- [ ] Seventh
+- [ ] Eighth
+- [ ] Ninth
+- [ ] Tenth
   > "Comment" - Person 3
 
-## Creator
+## :man_technologist: Creator
+
 - [Dante Mogrim](https://github.com/mogrim-91)
 
+## :bouquet: Cred
 
-## Cred
 - [modern-normalize]()
 
+## :fleur_de_lis: License
 
-## License
 - [MIT](https://en.wikipedia.org/wiki/MIT_License)
