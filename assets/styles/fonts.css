@@ -2,16 +2,37 @@
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: local(".../resources/fonts/JetBrainsMono-Regular.eot")
+  src: local(".../resources/fonts/jetbrainsmono/JetBrainsMono-Regular.eot")
       format("embedded-opentype"),
-    local(".../resources/fonts/JetBrainsMono-Regular.ttf") format("truetype"),
-    local(".../resources/fonts/JetBrainsMono-Regular.woff") format("woff"),
-    local(".../resources/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+    local(".../resources/fonts/jetbrainsmono/JetBrainsMono-Regular.otf")
+      format("opentype"),
+    local(".../resources/fonts/jetbrainsmono/JetBrainsMono-Regular.ttf")
+      format("truetype"),
+    local(".../resources/fonts/jetbrainsmono/JetBrainsMono-Regular.woff")
+      format("woff"),
+    local(".../resources/fonts/jetbrainsmono/JetBrainsMono-Regular.woff2")
+      format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DOS";
+  src: local(".../resources/fonts/dos/Web437_DOS-V_TWN16.eot")
+      format("embedded-opentype"),
+    local(".../resources/fonts/dos/Web437_DOS-V_TWN16.otf") format("opentype"),
+    local(".../resources/fonts/dos/Web437_DOS-V_TWN16.ttf") format("truetype"),
+    local(".../resources/fonts/dos/Web437_DOS-V_TWN16.woff") format("woff"),
+    local(".../resources/fonts/dos/Web437_DOS-V_TWN16.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 /* Applies the same font to all the text on the site, plus fallback fonts. */
+
+h1 {
+  font-family: "DOS";
+}
 
 * {
   font-family: "JetBrains Mono", Verdana, Arial, Helvetica, sans-serif;

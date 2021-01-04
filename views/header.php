@@ -17,14 +17,14 @@
         <!-- Modern-Normalize CSS insertion. -->
     <link rel="stylesheet" href="../assets/styles/modern-normalize.css">
         <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../resources/media/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../resources/media/icons/favicon.svg" />
 </head>
 
 <body>
 
 <header>
 
-    <img class="header-img" src="./resources/media/headerTest.svg">
+    <img class="header-img" src="./resources/media/headertesting.svg">
     <h1><?php echo $config['title']; ?></h1>
     <?php require __DIR__ . '/navigation.php'; ?>
 
