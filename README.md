@@ -2,10 +2,12 @@
 
 <img src="https://media.giphy.com/media/oVvhEYvWDvE1G/giphy.gif" width="75%">
 
-## About
+## :shipit: About
+
 This is an individual school assignment in PHP. We were supposed to create a new and improved clone of the website [Hacker News](https://news.ycombinator.com/news). The project had to include all default features and meet all the requirements mentioned below:
 
-#### *The implemented features are:*
+<details><summary> :scroll: **The project was meant to include the following features:** </summary>
+<p>
 - As a user I should be able to create an account.
 - As a user I should be able to login.
 - As a user I should be able to logout.
@@ -21,8 +23,11 @@ This is an individual school assignment in PHP. We were supposed to create a new
 - As a user I'm able to comment on a post.
 - As a user I'm able to edit my comments.
 - As a user I'm able to delete my comments.
+</p>
+</details>
 
-#### *Followed by requirements consisting of:*
+<details><summary> :books: **Followed by requirements consisting of:** </summary>
+<p>
 - The application should be written in HTML, CSS, JavaScript, SQL and PHP.
 - The application should be built using a SQLite database with at least four different tables.
 - The application should be pushed to a public repository on [GitHub](https://github.com/).
@@ -34,6 +39,8 @@ This is an individual school assignment in PHP. We were supposed to create a new
 - The project should not include any coding errors, warning or notices.
 - The project must be tested on at least two of your classmates computers. Add the testers name to the `README.md` file.
 - The project must receive a [code review](https://en.m.wikipedia.org/wiki/Code_review) by another student. Add at least 10 comments to the student's `README.md` file through a [pull request](https://help.github.com/en/articles/creating-a-pull-request). Give feedback to the student below your name. The last student gives feedback to the first student in the list. Add your feedback one day before the presentation.
+</p>
+</details>
 
 ## Instructions
 
@@ -43,10 +50,12 @@ This is an individual school assignment in PHP. We were supposed to create a new
 4. Open in your browser, write the name of your localhost in the url followed by `/index.php` and access the project from there.
 
 ## Testers
+
 - [Person 1](https://github.com/mogrim-91)
 - [Person 2](https://github.com/mogrim-91)
 
 ## Code Review
+
 - By [Person 3](https://github.com/mogrim-91)
 - [ ] This
 - [ ] That

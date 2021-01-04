@@ -4,10 +4,10 @@
 :root {
   --bgColor: #282828;
   --hamburgerColor: #292929;
-  --buttonColor: royalblue;
-  --headerColor: mediumpurple;
-  --mainColor: mediumaquamarine;
-  --textColors: white;
+  --navColor: #333366;
+  --headerColor: #;
+  --mainColor: #;
+  --textColors: #;
 }
 
 body {
@@ -24,18 +24,24 @@ h1 {
 }
 
 .header-img {
-  width: 50vw;
+  width: 10vw;
 }
 
-nav {
-  padding: 2%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+/* nav.mainNav {
+    background-color: var(--navColor);
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 10vh;
+  } */
+
+nav.mainNav {
+  width: 100vw;
+  height: 20vh;
 }
 
-header,
-nav {
+header {
   background-color: #323232;
 }
 

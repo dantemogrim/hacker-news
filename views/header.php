@@ -7,26 +7,23 @@
         <!-- Title -->
     <title><?php echo $config['title']; ?></title>
         <!-- General CSS insertion. -->
-    <link rel="stylesheet" href="../assets/styles/app.css">
+        <link rel="stylesheet" href="../assets/styles/app.css">
         <!-- @font-face insertion. -->
-    <link rel="stylesheet" href="../assets/styles/fonts.css">
+        <link rel="stylesheet" href="../assets/styles/fonts.css">
         <!-- Hamburger menu CSS. -->
-    <link rel="stylesheet" href="../assets/styles/hamburger.css">
+        <link rel="stylesheet" href="../assets/styles/hamburger.css">
         <!-- Media queries insertion. -->
-    <link rel="stylesheet" href="../assets/styles/media.css">
+        <link rel="stylesheet" href="../assets/styles/media.css">
         <!-- Modern-Normalize CSS insertion. -->
-    <link rel="stylesheet" href="../assets/styles/modern-normalize.css">
+        <link rel="stylesheet" href="../assets/styles/modern-normalize.css">
         <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../resources/media/icons/favicon.svg" />
+        <link rel="icon" type="images/png" href="../resources/media/icons/favicon.svg">
 </head>
 
 <body>
 
 <header>
 
-    <img class="header-img" src="./resources/media/headertesting.svg">
-    <h1><?php echo $config['title']; ?></h1>
-    <?php require __DIR__ . '/navigation.php'; ?>
 
 </header>
 
