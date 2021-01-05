@@ -14,7 +14,7 @@
 
 
     <article>
-        <p>This is the home page. Test </p>
+        <p>This is the home page.</p>
         <span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Accusamus voluptas quibusdam consequuntur nostrum minus deserunt esse repudiandae pariatur at,
             quas veritatis cupiditate est dolores natus fugiat possimus mollitia!
