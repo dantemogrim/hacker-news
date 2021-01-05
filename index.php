@@ -5,7 +5,7 @@
 
     <nav>
         <a class="navLink" href="/index.php">Home</a>
-        <a class="navLink" href="/views/faq.php">FAQ</a>
+        <a class="navLink" href="/faq.php">FAQ</a>
         <a class="navLink" href="#">Best voted/Newest</a>
         <a class="navLink" href="/sign-in.php">Sign in</a>
     </nav>
@@ -14,7 +14,7 @@
 
 
     <article>
-        <p>This is the home page.</p>
+        <p>This is the home page. Test </p>
         <span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Accusamus voluptas quibusdam consequuntur nostrum minus deserunt esse repudiandae pariatur at,
             quas veritatis cupiditate est dolores natus fugiat possimus mollitia!

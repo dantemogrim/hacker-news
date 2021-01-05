@@ -1,10 +1,17 @@
 <?php require __DIR__ . '/app/autoload.php'; ?>
 <?php require __DIR__ . '/views/header.php'; ?>
 
+<!-- Calculating if user is logged in or not.
+<?php //session_start(); 
+?>  -->
+
 <!-- Sign in form. -->
 <a class="navLink" href="/index.php">Home</a>
 <link rel="stylesheet" href="/assets/styles/app.css">
 
+<!-- <?php //if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']
+		//!== true) : 
+		?> -->
 
 <form action="app/users/login.php" method="post">
 
@@ -24,7 +31,7 @@
 
 	<p><b>Forgot your password?</b></p>
 
-	<button>Sign in</button>
+	<button type="">Sign in</button>
 
 </form>
 

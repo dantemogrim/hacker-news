@@ -3,24 +3,44 @@
 <link rel="stylesheet" href="/assets/styles/app.css">
 
 <p>Welcome, stranger! Glad you're joining us.</p>
-<p>Fill in the forms below to get started.</p>
+<p>Fill the forms with your information to get started.</p>
+
+/*
+password_hash()
+
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+if (password_verify($password, $hash)) {
+echo "Access granted.";
+}
+
+-----
+
+SELECT username, password FROM users
+WHERE username = 'Dante'
+LIMIT 1;
+
+*/
+
+
+
 
 <form>
 
 	<section>
-		<label>E-mail:</label>
+		<label for="email">E-mail:</label>
 		<input type="email">
 	</section>
 
 	<br>
 
 	<section>
-		<label>Passphrase:</label>
+		<label for="password">Passphrase:</label>
 		<input type="password">
 	</section>
 
 	<br>
 
-	<button>Sign up</button>
+	<button type="">Sign up</button>
 
 </form>
