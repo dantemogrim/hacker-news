@@ -43,10 +43,11 @@ This is an individual school assignment in PHP. We were supposed to create a new
 </details>
 
 ## :octocat: Instructions
+*ATTN: A prerequisite - In order to do this you will need to have PHP installed on your computer.*
 
 1. Clone or fork this repository to your computer.
 2. Open up your terminal and `cd` into the project folder.
-3. Create a local server by using the following command: `php -S localhost:8000/index.php`
+3. Create a local server by using the following command: `php -S localhost:1337/index.php`
 4. Open in your browser, write the name of your localhost in the url followed by `/index.php` and access the project from there.
 
 ## :computer: Testers
