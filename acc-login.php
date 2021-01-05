@@ -36,4 +36,4 @@
 </form>
 
 <p>Are you new to our site?</p>
-<p>Click <a class="sign-up-link" href="/sign-up.php"><b><u>here</u></b></a> to create an account.</p>
+<p>Click <a class="acc-create-link" href="/acc-create.php"><b><u>here</u></b></a> to create an account.</p>

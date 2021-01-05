@@ -1,0 +1,1 @@
+// Is the user the owner of the actual data?

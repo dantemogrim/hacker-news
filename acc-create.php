@@ -5,25 +5,6 @@
 <p>Welcome, stranger! Glad you're joining us.</p>
 <p>Fill the forms with your information to get started.</p>
 
-/*
-password_hash()
-
-$hash = password_hash($password, PASSWORD_DEFAULT);
-
-if (password_verify($password, $hash)) {
-echo "Access granted.";
-}
-
------
-
-SELECT username, password FROM users
-WHERE username = 'Dante'
-LIMIT 1;
-
-*/
-
-
-
 
 <form>
 

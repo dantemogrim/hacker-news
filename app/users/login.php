@@ -6,11 +6,11 @@ require __DIR__ . '/../autoload.php';
 
 // In this file we login users.
 
-/*
 
 // Check if both email and password exists in the POST request.
 if (isset($_POST['email'], $_POST['password'])) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = htmlentities($_POST['password']);
 
     // Prepare, bind email parameter and execute the database query.
     $statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
@@ -20,8 +20,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     // Fetch the user as an associative array.
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-    // If we couldn't find the user in the database, redirect back to the login
-    // page with our custom redirect function.
+    // If the user is not found within the db, then redirect the user back to the login page.
     if (!$user) {
         redirect('/login.php');
     }
@@ -39,7 +38,5 @@ if (isset($_POST['email'], $_POST['password'])) {
 }
 
 // We should put this redirect in the end of this file since we always want to
-// redirect the user back from this file. We don't know
+// redirect the user back from this file.
 redirect('/');
-
-*/

@@ -7,7 +7,7 @@
         <a class="navLink" href="/index.php">Home</a>
         <a class="navLink" href="/faq.php">FAQ</a>
         <a class="navLink" href="#">Best voted/Newest</a>
-        <a class="navLink" href="/sign-in.php">Sign in</a>
+        <a class="navLink" href="/acc-login.php">Sign in</a>
     </nav>
 
 
