@@ -17,15 +17,17 @@ if (isset($_POST['email'], $_POST['password'])) {
     $password = $_POST['password'];
     // Prepare, bind email parameter and execute the database query.
 
+    $regQuery = "INSERT INTO users (email, ) VALUES (:user)";
 
-    $statement = $pdo->prepare('INSERT INTO users WHERE email = :email');
+    //$statement = $pdo->prepare('INSERT INTO users WHERE email = :email');
     // Defining what :email variable actually is. Hardcode to string.
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
+
     $statement->execute();
 
     // Fetch the user as an associative array.
     $user = $statement->fetch(PDO::FETCH_ASSOC);
-
+    die(var_dump($user));
     // If we couldn't find the user in the database, redirect back to the login
     // page with our custom redirect function.
     if (!$user) {
@@ -43,6 +45,8 @@ if (isset($_POST['email'], $_POST['password'])) {
         $_SESSION['user'] = $user;
     }
 }
+
+
 
 // We should put this redirect in the end of this file since we always want to
 // redirect the user back from this file.
