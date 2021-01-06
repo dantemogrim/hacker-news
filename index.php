@@ -1,32 +1,14 @@
-<?php require __DIR__ . '/app/autoload.php'; ?>
+<!-- The header is put together with autoload which activates
+the essential functionality of the site. -->
 <?php require __DIR__ . '/views/header.php'; ?>
 
-<main>
+<article>
+    <h1><?php echo $config['title']; ?></h1>
+    <p>This is the home page.</p>
 
-    <nav>
-        <a class="navLink" href="/index.php">Home</a>
-        <a class="navLink" href="/faq.php">FAQ</a>
-        <a class="navLink" href="#">Best voted/Newest</a>
-        <a class="navLink" href="/acc-login.php">Sign in</a>
-    </nav>
-
-
-
-
-    <article>
-        <p>This is the home page. Test</p>
-        <span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Accusamus voluptas quibusdam consequuntur nostrum minus deserunt esse repudiandae pariatur at,
-            quas veritatis cupiditate est dolores natus fugiat possimus mollitia!
-            Dolores nihil fugit, rerum eligendi impedit voluptates mollitia sequi deleniti odit eius,
-            repudiandae incidunt. Tempore dignissimos unde neque nostrum nemo blanditiis nobis.
-            Numquam debitis doloremque enim aliquid amet ipsum ab optio, sit natus unde nesciunt nostrum voluptatibus,
-            ea, dicta dolorem nobis ratione? Earum nesciunt voluptas voluptatibus quas, voluptatem ipsum recusandae
-            eveniet cumque debitis, dignissimos saepe rerum odit rem, nulla vitae mollitia architecto ipsam repellendus.
-            Incidunt dolorem consequatur temporibus, provident commodi nihil quidem.
-        </span>
-    </article>
-
-</main>
+    <?php if (isset($_SESSION['user'])) : ?>
+        <p>Welcome, <?php echo $_SESSION['user']['name']; ?>!</p>
+    <?php endif; ?>
+</article>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
