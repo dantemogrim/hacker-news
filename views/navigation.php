@@ -1,22 +1,26 @@
-<!-- Main navigation bar. -->
-<nav class="mainNav">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><?php echo $config['title']; ?></a>
 
-  <a class="navLink" href="../index.php">Home</a>
-  <a class="navLink" href="../views/faq.php">FAQ</a>
-  <a class="navLink" href="#">Best voted/Newest</a>
-  <a class="navLink" href="../views/acc-login.php">Sign in</a>
-</nav>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/index.php">Home</a>
+    </li><!-- /nav-item -->
 
-<!-- Hamburger menu. -->
-<button class="hamburgerMenu">
-  <nav class="burgerContainer">
-    <ul>
-      <li><a class="burgerLink" href="#">Your Profile</a></li>
-      <li><a class="burgerLink" href="#">Your Comments</a></li>
-      <li><a class="burgerLink" href="#">Your Posts</a></li>
-      <li><a class="burgerLink" href="#">Account Settings</a></li>
-      <li><a class="burgerLink" href="#">Log Out</a></li>
-    </ul>
+    <li class="nav-item">
+      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/about.php' ? 'active' : ''; ?>" href="/about.php">About</a>
+    </li><!-- /nav-item -->
 
-  </nav>
-</button>
+    <li class="nav-item">
+      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signup_form.php' ? 'active' : ''; ?>" href="/signup_form.php">Sign Up</a>
+    </li><!-- /nav-item -->
+
+
+    <li class="nav-item">
+      <?php if (isset($_SESSION['user'])) : ?>
+        <a class="nav-link" href="/app/users/logout.php">Logout</a>
+      <?php else : ?>
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login_form.php">Login</a>
+      <?php endif; ?>
+    </li><!-- /nav-item -->
+  </ul><!-- /navbar-nav -->
+</nav><!-- /navbar -->
