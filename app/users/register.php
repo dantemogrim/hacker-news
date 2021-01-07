@@ -4,10 +4,30 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// Check if the data exists.
-if (isset($_POST['email'], $_POST['password'])) {
+// Check if all forms are properly filled in.
+if (isset($_POST['name'], $_POST['username'] $_POST['email'], $_POST['password'])) {
     exit('Something seems to be missing. Please, fill all fields.');
 }
+
+$name = $_POST['name'];
+$username = $_POST['email'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+
+
+
+
+
+
+/* Dummy Data User:
+
+Sir Waffle Kale of Coop
+coolPerson_123
+cool_as_ice@hotmail.com
+SillyPassword123
+
+*/
 
 //if ($statement = $pdo->(prepare('INSERT INTO users')))
 
