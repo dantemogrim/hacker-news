@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+
+
+
 // Check if all forms are properly filled in.
 if (isset($_POST['name'], $_POST['username'] $_POST['email'], $_POST['password'])) {
     exit('Something seems to be missing. Please, fill all fields.');
@@ -13,6 +16,7 @@ $name = $_POST['name'];
 $username = $_POST['email'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+
 
 
 

@@ -11,7 +11,7 @@
     </li><!-- /nav-item -->
 
     <li class="nav-item">
-      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signup-form.php' ? 'active' : ''; ?>" href="/signup-form.php">Sign Up</a>
+      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/gui-register.php' ? 'active' : ''; ?>" href="/gui-register.php">Sign Up</a>
     </li><!-- /nav-item -->
 
 
@@ -19,7 +19,7 @@
       <?php if (isset($_SESSION['user'])) : ?>
         <a class="nav-link" href="/app/users/logout.php">Logout</a>
       <?php else : ?>
-        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="login-form.php">Login</a>
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/login.php' ? 'active' : ''; ?>" href="gui-login.php">Login</a>
       <?php endif; ?>
     </li><!-- /nav-item -->
   </ul><!-- /navbar-nav -->
