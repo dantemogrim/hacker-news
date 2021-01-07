@@ -6,6 +6,7 @@ require __DIR__ . '/../autoload.php';
 
 
 
+// If it has not been set
 
 // Check if all forms are properly filled in.
 if (isset($_POST['name'], $_POST['username'] $_POST['email'], $_POST['password'])) {
