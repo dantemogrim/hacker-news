@@ -4,52 +4,57 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// First check if isset.
+// Check if the data exists.
 if (isset($_POST['email'], $_POST['password'])) {
-    // Collect and sanitize email, sanitize strings, hash password.
-    // Define their names and give them their proper functions.
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $password = $_POST['password'];
-
-
-
-    // The password_hash function creates a new password hash
-    // CODE $hash = password_hash($passphrase, PASSWORD_DEFAULT);
-
-
-    // Check if both email and password exists in the POST request.
-
-
-    // Prepare, bind email parameter and execute the database query.
-
-    $registerQuery = "INSERT INTO users (email, ) VALUES (:user)";
-
-    //$statement = $pdo->prepare('INSERT INTO users WHERE email = :email');
-    // Defining what :email variable actually is. Hardcode to string.
-    $statement->bindParam(':email', $email, PDO::PARAM_STR);
-    $statement->bindParam(':password', $password, PDO::PARAM_STR);
-    $statement->execute();
-
-    // Fetch the user as an associative array.
-    $user = $statement->fetch(PDO::FETCH_ASSOC);
-    die(var_dump($user));
-    // If we couldn't find the user in the database, redirect back to the login
-    // page with our custom redirect function.
-    if (!$user) {
-        redirect('/login_form.php');
-    }
-
-    // If we found the user in the database, compare the given password from the
-    // request with the one in the database using the password_verify function.
-    if (password_verify($_POST['password'], $user['password'])) {
-        // If the password was valid we know that the user exists and provided
-        // the correct password. We can now save the user in our session.
-        // Remember to not save the password in the session!
-        unset($user['password']);
-
-        $_SESSION['user'] = $user;
-    }
+    exit('Something seems to be missing. Please, fill all fields.');
 }
+
+//if ($statement = $pdo->(prepare('INSERT INTO users')))
+
+
+
+
+// Collect and sanitize email, sanitize strings, hash password.
+// Define their names and give them their proper functions.
+//$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+//$password = $_POST['password'];
+
+
+
+// The password_hash function creates a new password hash
+// CODE $hash = password_hash($passphrase, PASSWORD_DEFAULT);
+
+// Check if both email and password exists in the POST request.
+
+// Prepare, bind email parameter and execute the database query.
+
+//$registerQuery = "INSERT INTO users (email, ) VALUES (:user)";
+
+//$statement = $pdo->prepare('INSERT INTO users WHERE email = :email');
+// Defining what :email variable actually is. Hardcode to string.
+//$statement->bindParam(':email', $email, PDO::PARAM_STR);
+//$statement->bindParam(':password', $password, PDO::PARAM_STR);
+//$statement->execute();
+
+// Fetch the user as an associative array.
+//$user = $statement->fetch(PDO::FETCH_ASSOC);
+//die(var_dump($user));
+// If we couldn't find the user in the database, redirect back to the login
+// page with our custom redirect function.
+//if (!$user) {
+//redirect('/login_form.php');
+//}
+
+// If we found the user in the database, compare the given password from the
+//if (password_verify($_POST['password'], $user['password'])) {
+// If the password was valid we know that the user exists and provided
+// the correct password. We can now save the user in our session.
+// Remember to not save the password in the session!
+//unset($user['password']);
+
+//$_SESSION['user'] = $user;
+//}
+//}
 
 
 

@@ -11,7 +11,7 @@
     </li><!-- /nav-item -->
 
     <li class="nav-item">
-      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signup_form.php' ? 'active' : ''; ?>" href="/signup_form.php">Sign Up</a>
+      <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/signup-form.php' ? 'active' : ''; ?>" href="/signup-form.php">Sign Up</a>
     </li><!-- /nav-item -->
 
 
