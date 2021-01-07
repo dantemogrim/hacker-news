@@ -35,7 +35,8 @@ if (isset($_POST['email'], $_POST['password'])) {
 //die(var_dump('Can you see me?'));
 
 //redirect 
-
+// The password_verify function verifies that a password matches a hash.
+// CODE password_verify($passphrase, $hash); // true
 
     // If we couldn't find the user in the database, redirect back to the login
     // page with our custom redirect function.

@@ -4,25 +4,30 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-// In this file we register a new user.
-
-// The password_hash function creates a new password hash
-// CODE $hash = password_hash($passphrase, PASSWORD_DEFAULT);
-// The password_verify function verifies that a password matches a hash.
-// CODE password_verify($passphrase, $hash); // true
-
-// Check if both email and password exists in the POST request.
+// First check if isset.
 if (isset($_POST['email'], $_POST['password'])) {
+    // Collect and sanitize email, sanitize strings, hash password.
+    // Define their names and give them their proper functions.
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
+
+
+
+    // The password_hash function creates a new password hash
+    // CODE $hash = password_hash($passphrase, PASSWORD_DEFAULT);
+
+
+    // Check if both email and password exists in the POST request.
+
+
     // Prepare, bind email parameter and execute the database query.
 
-    $regQuery = "INSERT INTO users (email, ) VALUES (:user)";
+    $registerQuery = "INSERT INTO users (email, ) VALUES (:user)";
 
     //$statement = $pdo->prepare('INSERT INTO users WHERE email = :email');
     // Defining what :email variable actually is. Hardcode to string.
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
-
+    $statement->bindParam(':password', $password, PDO::PARAM_STR);
     $statement->execute();
 
     // Fetch the user as an associative array.
