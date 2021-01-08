@@ -21,7 +21,7 @@
 			<small class="form-text text-muted">Please, provide your passphrase.</small>
 		</div><!-- /form-group -->
 
-		<button type="submit" class="btn btn-primary">Sign Up</button>
+		<button type="submit" class="btn btn-primary" name="register-submit">Sign Up</button>
 	</form>
 </div>
 <?php require __DIR__ . '/views/footer.php'; ?>
