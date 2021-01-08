@@ -8,7 +8,7 @@
 
 	<form action="app/users/login.php" method="post">
 		<div class="form-group">
-			<label for="email">E-mail or username</label>
+			<label for="email">E-mail</label>
 			<input class="form-control" type="email" name="email" id="email" required>
 			<small class="form-text text-muted">Please provide the your email address.</small>
 		</div><!-- /form-group -->

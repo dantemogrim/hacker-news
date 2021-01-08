@@ -9,7 +9,7 @@ require __DIR__ . '/../autoload.php';
 
 
 // ----------------------------------------------------------------
-$registeruser_msg = "";
+//$registeruser_msg = "";
 
 // Checking that user got here in a proper way by pressing submit.
 if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'],)) {
@@ -19,6 +19,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'],)) {
     $passphrase = password_hash($_POST['passphrase'], PASSWORD_DEFAULT);
 
     if (empty($email) || empty($username) || empty($passphrase)) {
+        //echo $registeruser_msg = "Oopsie, Daisy!";
         // Relocate user but let them keep their typed data in the  forms.
         //header("Location: gui-register.php?error=emptyfields&uid=" . $username . "$mail=" . $email);
         //header('Location: gui-register.php');
@@ -28,7 +29,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'],)) {
 
 
 
-// ----------------------------------------------------------------
+// ---------------------------------------------------------------- Prepare, bind, execute and insert to database file.
 
 
 $sql = "INSERT INTO users (email, username, passphrase) VALUES (:email, :username, :passphrase)";
@@ -43,4 +44,4 @@ $statement->execute();
 $user = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
-redirect('/');
+redirect('/gui-login.php');
