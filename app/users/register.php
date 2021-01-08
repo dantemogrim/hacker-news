@@ -12,10 +12,10 @@ require __DIR__ . '/../autoload.php';
 $registeruser_msg = "";
 
 // Checking that user got here in a proper way by pressing submit.
-if (isset($_POST['register-submit'])) {
+if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'],)) {
 
-    $email = $_POST['email'];
-    $username = $_POST['username'];
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $passphrase = password_hash($_POST['passphrase'], PASSWORD_DEFAULT);
 
     if (empty($email) || empty($username) || empty($passphrase)) {
