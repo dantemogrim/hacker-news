@@ -30,8 +30,11 @@ $statement->execute();
 // Fetch the user as an associative array.
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
+/* If the password and username don't match the ones in the database
+* during login - throw an error.
+*/
 
-
+// If everything goes well - take the user to the main page.
 redirect('/index.php');
 
 //die(var_dump('Can you see me?'));
@@ -56,3 +59,9 @@ redirect('/index.php');
       //  unset($user['password']);
 
        // $_SESSION['user'] = $user;
+
+
+
+       /* If the password and username don't match the ones in the database
+* during login - throw an error.
+*/

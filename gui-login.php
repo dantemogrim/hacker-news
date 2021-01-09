@@ -8,15 +8,15 @@
 
 	<form action="app/users/login.php" method="post">
 		<div class="form-group">
-			<label for="email">E-mail</label>
-			<input class="form-control" type="email" name="email" id="email" required>
-			<small class="form-text text-muted">Please provide the your email address.</small>
+			<label for="username">Username</label>
+			<input class="form-control" type="text" name="username" id="username" maxlength="15" required>
+			<small class="form-text text-muted">Please, provide your username.</small>
 		</div><!-- /form-group -->
 
 		<div class="form-group">
-			<label for="password">Password</label>
+			<label for="password">Passphrase</label>
 			<input class="form-control" type="password" name="password" id="password" required>
-			<small class="form-text text-muted">Please provide the your password (passphrase).</small>
+			<small class="form-text text-muted">Please provide your passphrase.</small>
 		</div><!-- /form-group -->
 
 		<button type="submit" class="btn btn-primary">Login</button>

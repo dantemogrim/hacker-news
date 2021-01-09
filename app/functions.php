@@ -9,22 +9,42 @@ function redirect(string $path)
 }
 
 
-// ----------------- * REGISTER USER * ------------------ 
-// Asses that the data doesn't already exist. 
-
-// This built-in function will generate a powerful hash
-// $hash = password_hash($passphrase, PASSWORD_DEFAULT);
 
 
 
+// Is the user already logged in? If not - redirect them to the login page.
+function loggedIn()
+{
+    if (!isset($_SESSION['user'])) {
+        redirect('/login,php');
+    }
+}
 
 
 
-// ----------------- * LOGIN USER * ------------------ 
-// Asses if user and password matches?
 
-// password_verify($passphrase, $hash);
+// ======================================================
+//                  CATEGORY LARGE FONT
+// ======================================================
+
+
+// ------------------------------------------------------
+//                  Sub-category of some kind.
+// ------------------------------------------------------
+
+/* Detailed explanation of something.
+* That should require.
+* Several paragraphs.
+* Yeah.
+*/
 
 
 
-// ----------------- * LOGIN USER * ------------------ 
+
+
+
+/* 
+*
+*
+*
+*/
