@@ -24,4 +24,8 @@
 		<button type="submit" class="btn btn-primary" name="register-submit">Sign Up</button>
 	</form>
 </div>
+<a href="/gui-login.php">
+	<br>
+	<p>Already have an account? Click here to login instead.</p>
+</a>
 <?php require __DIR__ . '/views/footer.php'; ?>

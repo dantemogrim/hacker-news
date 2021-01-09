@@ -43,25 +43,6 @@ redirect('/index.php');
 // The password_verify function verifies that a password matches a hash.
 // CODE password_verify($passphrase, $hash); // true
 
-    // If we couldn't find the user in the database, redirect back to the login
-    // page with our custom redirect function.
-    // Should be able to throw $_SESSION error messages to users here.
-    //if (!$user) {
-        //redirect('/login_form.php');
-    //}
-
-    // If we found the user in the database, compare the given password from the
-    // request with the one in the database using the password_verify function.
-    //if (password_verify($_POST['password'], $user['password'])) {
-        // If the password was valid we know that the user exists and provided
-        // the correct password. We can now save the user in our session.
-        // Remember to not save the password in the session!
-      //  unset($user['password']);
-
-       // $_SESSION['user'] = $user;
-
-
-
-       /* If the password and username don't match the ones in the database
-* during login - throw an error.
-*/
+// if (password_verify($passphrase, $user['passphrase'])) {
+  //  $_SESSION['loggedIN'] = 
+//}

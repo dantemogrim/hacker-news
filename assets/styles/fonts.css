@@ -31,9 +31,9 @@
 /* Applies the same font to all the text on the site, plus fallback fonts. */
 
 h1 {
-  font-family: "DOS", Verdana, Arial, Helvetica, sans-serif;
+  font-family: "JetBrains Mono", Verdana, Arial, Helvetica, sans-serif;
 }
 
-main {
+body {
   font-family: "JetBrains Mono", Verdana, Arial, Helvetica, sans-serif;
 }
