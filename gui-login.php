@@ -18,9 +18,15 @@
 			<input class="form-control" type="password" name="password" id="password" required>
 			<small class="form-text text-muted">Please provide your passphrase.</small>
 		</div><!-- /form-group -->
-
+		<a href="#">
+			<p>Forgot your passphrase? Click here.</p>
+		</a>
 		<button type="submit" class="btn btn-primary">Login</button>
 	</form>
 </article>
+<br>
+<a href="/gui-register.php">
+	<p>Are you new to our site? Click here to register.</p>
+</a>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
