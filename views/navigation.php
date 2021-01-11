@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><?php echo $config['title']; ?></a>
+
+  <a class="navbar-brand" href="/index.php"><?php echo $config['title']; ?></a>
 
   <ul class="navbar-nav">
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
       <li class="nav-item">
-        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/index.php">Home</a>
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/gui-profile.php">Profile</a>
       </li><!-- /nav-item -->
     <?php endif; ?>
 
@@ -17,7 +18,7 @@
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
       <li class="nav-item">
-        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/about.php' ? 'active' : ''; ?>" href="/about.php">About</a>
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/FAQ.php' ? 'active' : ''; ?>" href="/FAQ.php">FAQ</a>
       </li><!-- /nav-item -->
     <?php endif; ?>
 

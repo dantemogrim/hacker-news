@@ -23,4 +23,6 @@ endif;
     <?php endif; ?>
 </article>
 
+<article>(NEWS FEED)</article>
+
 <?php require __DIR__ . '/views/footer.php'; ?>
