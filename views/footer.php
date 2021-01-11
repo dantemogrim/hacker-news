@@ -1,9 +1,11 @@
 <footer>
-        
+
+
+    <img src="">
 </footer>
 
-    <script src="/assets/scripts/app.js"></script>
-    
-    </body>
+<script src="/assets/scripts/app.js"></script>
 
-    </html>
+</body>
+
+</html>

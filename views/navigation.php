@@ -11,6 +11,12 @@
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
       <li class="nav-item">
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/gui-add-post.php' ? 'active' : ''; ?>" href="/gui-add-post.php">Add Post</a>
+      </li><!-- /nav-item -->
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['loggedIn'])) : ?>
+      <li class="nav-item">
         <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/about.php' ? 'active' : ''; ?>" href="/about.php">About</a>
       </li><!-- /nav-item -->
     <?php endif; ?>

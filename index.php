@@ -1,16 +1,21 @@
 <!-- The header is put together with autoload which activates
 the essential functionality of the site. -->
 <?php require __DIR__ . '/views/header.php';
-if (isset($_SESSION['loggedIn'])) {
-    print_r($_SESSION['loggedIn']);
-    // Array with user info from the 'logged in' session.
-} else {
-    echo 'You wanna see some news? Ya gotta\' log in first, ya silly!';
-}
+// Check if the user is logged in - otherwise redirect.
+if (!isset($_SESSION['loggedIn'])) :
+    redirect('/login.php');
+endif;
+
+
+//if (isset($_SESSION['loggedIn'])) {
+//    print_r($_SESSION['loggedIn']);
+// Array with user info from the 'logged in' session.
+//}
 ?>
 
 <article>
-    <h1><?php echo $config['title']; ?></h1>
+    <!--<h1><?php //echo $config['title']; 
+            ?></h1>-->
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
         <p>Welcome, <?php echo $_SESSION['loggedIn']['username']; ?>!
