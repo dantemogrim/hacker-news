@@ -4,45 +4,48 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php'; // Connect to database.
 
-// Check if both email and password exists in the post request.
+
+// Check if e-mail & passphrase exist in the post request.
 if (isset($_POST['email'], $_POST['passphrase'])) {
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $passphrase = password_hash($_POST['passphrase'], PASSWORD_DEFAULT);
+  $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+  $passphrase = $_POST['passphrase'];
 
-    //if (
-    //  isset($user['password']) &&
-    //password_verify($password, $user['password'])
-    //) {
-    //$_SESSION['user'] = [
-    //  'id' => $user['id'],
-    //'name' => $user['name'],
-    //'email' => $user['email'],
-    // ];
-}
+  // Check if any of the login fields are empty.
+  if (empty($email) || empty($passphrase)) {
+    echo 'Fill out all of the fields.';
+    exit();
+    // redirect('/gui-login.php');
+  }
 
+  // Check if the actual email already exists within the database.
+  $sql = "SELECT * FROM users WHERE email = :email";
+  $statement = $pdo->prepare($sql);
+  $statement->bindParam(':email', $email, PDO::PARAM_STR);
+  $statement->execute();
+  $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-$sql = "SELECT * FROM users WHERE email = :email";
-// Prepare, bind email parameter and execute the database query.
-$statement = $pdo->prepare($sql);
-$statement->bindParam(':email', $email, PDO::PARAM_STR);
-$statement->execute();
+  if (!$user) {
+    echo 'There is no account registered to that e-mail.';
+    // redirect('/gui-login.php');
+    exit();
+  }
 
-// Fetch the user as an associative array.
-$user = $statement->fetch(PDO::FETCH_ASSOC);
+  if (!password_verify($passphrase, $user['passphrase'])) {
+    echo 'Wrong e-mail or password.';
+    // redirect('/gui-login.php');
+    exit();
+  }
+  // If all goes well, create a session for the user as logged in.
+  if (isset($user['passphrase']) && password_verify($passphrase, $user['passphrase'])) {
+    $_SESSION['loggedIn'] = [
+      'username' => $user['username'],
+      'email' => $user['email'],
+      'userId' => $user['id']
+    ];
+  }
 
-/* If the password and username don't match the ones in the database
-* during login - throw an error.
-*/
+  redirect('/index.php');
+};
 
-// If everything goes well - take the user to the main page.
-redirect('/index.php');
-
-//die(var_dump('Can you see me?'));
-
-//redirect 
-// The password_verify function verifies that a password matches a hash.
-// CODE password_verify($passphrase, $hash); // true
-
-// if (password_verify($passphrase, $user['passphrase'])) {
-  //  $_SESSION['loggedIN'] = 
-//}
+// If things go south, take the user back to the login page.
+redirect('/gui-login.php');

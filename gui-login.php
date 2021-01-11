@@ -1,32 +1,33 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
-<!-- Check if the user's already logged in - in which case take them to the main page instead.
-// if (!isset($_SESSION['logged-in'])) : redirect('/login_form.php'); endif; -->
-
 <article>
 	<h1>Login</h1>
 
 	<form action="app/users/login.php" method="post">
 		<div class="form-group">
-			<label for="username">Username</label>
-			<input class="form-control" type="text" name="username" id="username" maxlength="15" required>
-			<small class="form-text text-muted">Please, provide your username.</small>
+			<label for="email">E-mail</label>
+			<input class="form-control" type="email" name="email" id="email" required>
+			<small class="form-text text-muted">Please provide your email address.</small>
 		</div><!-- /form-group -->
 
 		<div class="form-group">
-			<label for="password">Passphrase</label>
-			<input class="form-control" type="password" name="password" id="password" required>
+			<label for="passphrase">Passphrase</label>
+			<input class="form-control" type="password" name="passphrase" id="passphrase" required>
 			<small class="form-text text-muted">Please provide your passphrase.</small>
 		</div><!-- /form-group -->
+
 		<a href="#">
-			<p>Forgot your passphrase? Click here.</p>
+			<p>Lost your passphrase? Click here.</p>
 		</a>
+
 		<button type="submit" class="btn btn-primary">Login</button>
 	</form>
 </article>
+
 <br>
+
 <a href="/gui-register.php">
-	<p>Are you new to our site? Click here to register.</p>
+	<p>New to this place? Click here to register.</p>
 </a>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
