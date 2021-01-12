@@ -16,7 +16,7 @@ Comments:
 <ul>Edit Comments</ul>
 <br>
 
-<a href="#">
+<a href="/gui-account-settings.php">
     Account Settings
 </a>
 
