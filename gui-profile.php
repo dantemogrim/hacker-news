@@ -1,6 +1,23 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
-<h1>This is your user profile <?php echo $_SESSION['loggedIn']['username']; ?> </h1>
+<h1><?php echo $_SESSION['loggedIn']['username']; ?> </h1>
 
+Avatar
+<br>
+
+Bio:
+<br>
+
+Posts:
+<ul>Edit Posts</ul>
+<br>
+
+Comments:
+<ul>Edit Comments</ul>
+<br>
+
+<a href="#">
+    Account Settings
+</a>
 
 <?php require __DIR__ . '/views/footer.php'; ?>

@@ -6,7 +6,7 @@
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
       <li class="nav-item">
-        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/gui-profile.php">Profile</a>
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''; ?>" href="/gui-profile.php"><?php echo $_SESSION['loggedIn']['username']; ?></a>
       </li><!-- /nav-item -->
     <?php endif; ?>
 
@@ -18,7 +18,7 @@
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
       <li class="nav-item">
-        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/FAQ.php' ? 'active' : ''; ?>" href="/FAQ.php">FAQ</a>
+        <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/FAQ.php' ? 'active' : ''; ?>" href="/FAQ.php">Filter</a>
       </li><!-- /nav-item -->
     <?php endif; ?>
 

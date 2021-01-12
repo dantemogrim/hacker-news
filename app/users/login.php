@@ -6,32 +6,32 @@ require __DIR__ . '/../autoload.php'; // Connect to database.
 
 
 // Check if e-mail & passphrase exist in the post request.
-if (isset($_POST['email'], $_POST['passphrase'])) {
-  $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+if (isset($_POST['username'], $_POST['passphrase'])) {
+  $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
   $passphrase = $_POST['passphrase'];
 
   // Check if any of the login fields are empty.
-  if (empty($email) || empty($passphrase)) {
+  if (empty($username) || empty($passphrase)) {
     echo 'Fill out all of the fields.';
     exit();
     // redirect('/gui-login.php');
   }
 
   // Check if the actual email already exists within the database.
-  $sql = "SELECT * FROM users WHERE email = :email";
+  $sql = "SELECT * FROM users WHERE username = :username";
   $statement = $pdo->prepare($sql);
-  $statement->bindParam(':email', $email, PDO::PARAM_STR);
+  $statement->bindParam(':username', $username, PDO::PARAM_STR);
   $statement->execute();
   $user = $statement->fetch(PDO::FETCH_ASSOC);
 
   if (!$user) {
-    echo 'There is no account registered to that e-mail.';
+    echo 'There is no account registered to that username.';
     // redirect('/gui-login.php');
     exit();
   }
 
   if (!password_verify($passphrase, $user['passphrase'])) {
-    echo 'Wrong e-mail or password.';
+    echo 'Wrong e-mail or username.';
     // redirect('/gui-login.php');
     exit();
   }

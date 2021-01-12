@@ -64,7 +64,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
         'userId' => $newUser['id']
     ];
 
-    // Take the user to the main page as soon as the registration is finished.
+    // Take the user to the index page as soon as the registration is finished.
     redirect('/index.php');
 };
 

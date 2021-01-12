@@ -5,15 +5,16 @@
 
 	<form action="app/users/login.php" method="post">
 		<div class="form-group">
-			<label for="email">E-mail</label>
-			<input class="form-control" type="email" name="email" id="email" required>
-			<small class="form-text text-muted">Please provide your email address.</small>
+			<label for="username">Username:</label>
+			<input class="form-control" type="text" name="username" id="username" required>
+			<small class="form-text text-muted"></small>
 		</div><!-- /form-group -->
 
 		<div class="form-group">
-			<label for="passphrase">Passphrase</label>
+			<span title="A passphrase is almost the same as a password. Instead of a just a single word however, we encourage our users to have at least four random words after each other. It's easy to remember and you reduce the risk of getting hacked. That way you're much safer off while surfing the web. If you have a password manager - even better!">
+				<label for="passphrase">Passphrase:</label></span>
 			<input class="form-control" type="password" name="passphrase" id="passphrase" required>
-			<small class="form-text text-muted">Please provide your passphrase.</small>
+			<small class="form-text text-muted"></small>
 		</div><!-- /form-group -->
 
 		<a href="#">

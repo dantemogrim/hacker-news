@@ -3,7 +3,7 @@ the essential functionality of the site. -->
 <?php require __DIR__ . '/views/header.php';
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/login.php');
+    redirect('/gui-login.php');
 endif;
 
 
@@ -18,8 +18,7 @@ endif;
             ?></h1>-->
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
-        <p>Welcome, <?php echo $_SESSION['loggedIn']['username']; ?>!
-            You are officially logged in.</p>
+        <p>ARTICLES GO HERE</p>
     <?php endif; ?>
 </article>
 
