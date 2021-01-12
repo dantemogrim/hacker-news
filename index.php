@@ -6,46 +6,45 @@ if (!isset($_SESSION['loggedIn'])) :
     redirect('/gui-login.php');
 endif;
 
+
 // Checking if e-mail already exists in database.
-$posts = $pdo->prepare('SELECT * FROM posts');
+$posts = $pdo->prepare('SELECT * FROM posts ORDER BY created_at DESC');
 $posts->execute();
 $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($allPosts);
 
+
+// print_r($allPosts);
 ?>
 
-<article>
+<p>MAIN PAGE - ALL ARTICLES GO HERE</p>
 
-    <?php if (isset($_SESSION['loggedIn'])) : ?>
-        <p>MAIN PAGE - ALL ARTICLES GO HERE</p>
-    <?php endif; ?>
-</article>
+<?php foreach ($allPosts as $articlePost) : ?>
 
-<article>(NEWS FEED)</article>
+    <?php $postAuthor = $pdo->prepare('SELECT username FROM users WHERE id = :user_id');
+    $postAuthor->bindParam(':user_id', $articlePost['user_id'], PDO::PARAM_STR);
+    $postAuthor->execute();
+    $singlePostAuthor = $postAuthor->fetch(PDO::FETCH_ASSOC);
 
-<article>
+    ?>
     <p>
-        Title:
+
+
     </p>
-    <p>
-        Article:
-    </p>
-    <p>
-        Link:
-    </p>
-    <p>
-        Date:
-    </p>
-</article>
 
+    <div class="card">
+        <h5 class="card-header"><?= $singlePostAuthor['username']; ?></h5>
+        <div class="card-body">
+            <h5 class="card-title"><?= $articlePost['title']; ?></h5>
+            <p class="card-text"><?= $articlePost['content']; ?></p>
+            <a href="<?= $articlePost['link']; ?>" target="_blank">Source Code: <?= $articlePost['link']; ?></a>
+            <a href="#" class="btn btn-primary">Read More</a>
+            <p>Created:<?= $articlePost['created_at']; ?></p>
+        </div>
+    </div>
 
+    <br>
 
-
-
-
-
-
-
+<?php endforeach; ?>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
