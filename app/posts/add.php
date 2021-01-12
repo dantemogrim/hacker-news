@@ -17,8 +17,16 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     $article = trim(filter_var($_POST['article'], FILTER_SANITIZE_STRING));
     $link = trim(filter_var($_POST['link'], FILTER_SANITIZE_STRING));
 
+
+    if (empty($title) || empty($article) || empty($link)) {
+        echo 'Fill in all the fields, please.';
+
+        exit();
+        // redirect('/gui-register.php');
+    }
+
     $userId = $_SESSION['loggedIn']['userId'];
-    $createdAt = '29juli'; // Change hardcoded!
+    $createdAt = date("Ymd");
 
     // Insert into SQLite database.
     $statement = $pdo->prepare('INSERT INTO posts (title, content, link, created_at, user_id) 

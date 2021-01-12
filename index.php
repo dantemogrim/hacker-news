@@ -6,22 +6,46 @@ if (!isset($_SESSION['loggedIn'])) :
     redirect('/gui-login.php');
 endif;
 
+// Checking if e-mail already exists in database.
+$posts = $pdo->prepare('SELECT * FROM posts');
+$posts->execute();
+$allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 
-//if (isset($_SESSION['loggedIn'])) {
-//    print_r($_SESSION['loggedIn']);
-// Array with user info from the 'logged in' session.
-//}
+print_r($allPosts);
+
 ?>
 
 <article>
-    <!--<h1><?php //echo $config['title']; 
-            ?></h1>-->
 
     <?php if (isset($_SESSION['loggedIn'])) : ?>
-        <p>ARTICLES GO HERE</p>
+        <p>MAIN PAGE - ALL ARTICLES GO HERE</p>
     <?php endif; ?>
 </article>
 
 <article>(NEWS FEED)</article>
+
+<article>
+    <p>
+        Title:
+    </p>
+    <p>
+        Article:
+    </p>
+    <p>
+        Link:
+    </p>
+    <p>
+        Date:
+    </p>
+</article>
+
+
+
+
+
+
+
+
+
 
 <?php require __DIR__ . '/views/footer.php'; ?>
