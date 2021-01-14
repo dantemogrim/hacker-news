@@ -20,7 +20,6 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 <p>MAIN PAGE - ALL ARTICLES GO HERE</p>
 
 <?php foreach ($allPosts as $articlePost) : ?>
-
     <?php $postAuthor = $pdo->prepare('SELECT username FROM users WHERE id = :user_id');
     $postAuthor->bindParam(':user_id', $articlePost['user_id'], PDO::PARAM_STR);
     $postAuthor->execute();
