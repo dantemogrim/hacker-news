@@ -6,7 +6,7 @@
 
 This is an individual school assignment with a main focus on PHP. We were supposed to create a new and improved clone of the website [Hacker News](https://news.ycombinator.com/news). The project had to include the default features of the original page plus the following user stories and requirements:
 
-<details><summary> :scroll:<b>User stories:</b></summary>
+<details><summary> :bust_in_silhouette: <b>User stories:</b></summary>
 
 - As a user I should be able to create an account.
 - As a user I should be able to login.
@@ -68,7 +68,7 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 - [ ] Seventh
 - [ ] Eighth
 - [ ] Ninth
-- [ ] Tent
+- [ ] Tenth
   > "Comment" - Person 3
 
 ## :man_technologist: Creator
