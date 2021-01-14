@@ -6,7 +6,6 @@ require __DIR__ . '/../autoload.php';
 
 // Checking that everything from register is properly filled out.
 if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
-
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
     $passphrase = password_hash($_POST['passphrase'], PASSWORD_DEFAULT);

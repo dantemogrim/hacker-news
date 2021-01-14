@@ -12,7 +12,6 @@ endif;
 
 // Check if forms are set and sanitize.
 if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
-
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
     $article = trim(filter_var($_POST['article'], FILTER_SANITIZE_STRING));
     $link = trim(filter_var($_POST['link'], FILTER_SANITIZE_STRING));
@@ -29,7 +28,7 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     $createdAt = date("Ymd");
 
     // Insert into SQLite database.
-    $statement = $pdo->prepare('INSERT INTO posts (title, content, link, created_at, user_id) 
+    $statement = $pdo->prepare('INSERT INTO posts (title, content, link, created_at, user_id)
     VALUES (:title, :content, :link, :created_at, :user_id)');
 
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
@@ -40,6 +39,5 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     $statement->execute();
 
 endif;
-
 
 redirect('/');
