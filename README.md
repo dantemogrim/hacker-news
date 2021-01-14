@@ -43,7 +43,8 @@ This is an individual school assignment with a main focus on PHP. We were suppos
 </details>
 
 ## :octocat: Instructions
-*ATTN: A prerequisite - In order to do this you will need to have PHP installed on your computer.*
+
+_ATTN: A prerequisite - In order to do this you will need to have PHP installed on your computer._
 
 1. Clone or fork this repository to your computer.
 2. Open up your terminal and `cd` into the project folder.
@@ -67,7 +68,7 @@ This is an individual school assignment with a main focus on PHP. We were suppos
 - [ ] Seventh
 - [ ] Eighth
 - [ ] Ninth
-- [ ] Tenth
+- [ ] Tent
   > "Comment" - Person 3
 
 ## :man_technologist: Creator
