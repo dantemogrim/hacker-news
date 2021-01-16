@@ -44,7 +44,7 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
         ];
     }
 
-    redirect('/index.php');
+    redirect('/public/index.php');
 };
 
 // If things go south, take the user back to the login page.

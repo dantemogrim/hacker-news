@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/views/header.php'; ?>
+<?php require __DIR__ . '/../header.php'; ?>
 
 <h1>Register</h1>
 <div class="register-container">
@@ -27,8 +27,6 @@
 
 <br>
 
-<a href="/gui-login.php">
+<a href="/public/views/gui-login.php">
     <p>Already a member? Click here to get to our login page.</p>
 </a>
-
-<?php require __DIR__ . '/views/footer.php'; ?>

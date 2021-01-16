@@ -1,9 +1,9 @@
 <!-- The header is put together with autoload which activates
 the essential functionality of the site. -->
-<?php require __DIR__ . '/views/header.php';
+<?php require __DIR__ . '/header.php';
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/gui-login.php');
+    redirect('/views/gui-login.php');
 endif;
 
 
@@ -46,4 +46,4 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 
 <?php endforeach; ?>
 
-<?php require __DIR__ . '/views/footer.php'; ?>
+<?php require __DIR__ . '/footer.php'; ?>

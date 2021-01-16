@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/views/header.php'; ?>
+<?php require __DIR__ . '/../header.php'; ?>
 
 <article>
     <h1>Add Post</h1>
@@ -10,8 +10,9 @@
         </div><!-- /form-group -->
 
         <div class="form-group">
-            <label for="article">Article:</label>
-            <textarea class="form-control" type="text" name="article" id="article" rows="5" placeholder="Type your content here." required></textarea>
+            <label for="article">Article description:</label>
+            <textarea class="form-control" type="text" name="article" id="article" rows="3" placeholder="Type your content here." required></textarea>
+            <small>(max x characters long)</small>
         </div><!-- /form-group -->
 
 
@@ -24,5 +25,3 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </article>
-
-<?php require __DIR__ . '/views/footer.php'; ?>

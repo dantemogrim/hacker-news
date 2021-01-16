@@ -27,3 +27,8 @@ div.card {
   display: flex;
   justify-content: space-evenly;
 }
+
+.footerIcons {
+  width: 10vw;
+  max-width: 70px;
+}

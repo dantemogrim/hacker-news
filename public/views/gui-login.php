@@ -1,9 +1,9 @@
-<?php require __DIR__ . '/views/header.php'; ?>
+<?php require __DIR__ . '/../header.php'; ?>
 
 <article>
     <h1>Login</h1>
 
-    <form action="app/users/login.php" method="post">
+    <form action="/public/app/users/login.php" method="post">
         <div class="form-group">
             <label for="username">Username:</label>
             <input class="form-control" type="text" name="username" id="username" required>
@@ -21,14 +21,12 @@
             <p>Lost your passphrase? Click here.</p>
         </a>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </article>
 
 <br>
 
-<a href="/gui-register.php">
+<a href="/public/views/gui-register.php">
     <p>New to this place? Click here to register.</p>
 </a>
-
-<?php require __DIR__ . '/views/footer.php'; ?>

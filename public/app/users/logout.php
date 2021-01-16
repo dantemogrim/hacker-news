@@ -6,4 +6,4 @@ require __DIR__ . '/../autoload.php';
 // Log out user.
 session_unset();
 session_destroy();
-redirect('/gui-logout.php');
+redirect('/public/views/gui-logout.php');

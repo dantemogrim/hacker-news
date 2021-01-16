@@ -1,5 +1,6 @@
-<?php require __DIR__ . '/views/header.php'; ?>
+<?php require __DIR__ . '/../header.php'; ?>
 
+<h2><i>Your profile</i></h2>
 <h1><?php echo $_SESSION['loggedIn']['username']; ?> </h1>
 
 Avatar
@@ -24,5 +25,3 @@ Comments:
 <a href="/gui-account-settings.php">
     Account Settings
 </a>
-
-<?php require __DIR__ . '/views/footer.php'; ?>
