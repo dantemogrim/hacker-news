@@ -17,7 +17,7 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 // print_r($allPosts);
 ?>
 
-<p>MAIN PAGE - ALL ARTICLES GO HERE</p>
+<h1>HACKER NEWS - ARTICLES</h1>
 
 <?php foreach ($allPosts as $articlePost) : ?>
     <?php $postAuthor = $pdo->prepare('SELECT username FROM users WHERE id = :user_id');
