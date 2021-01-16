@@ -1,7 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
     <a class="navbar-brand" href="/index.php"><?php echo $config['title']; ?></a>
-
     <ul class="navbar-nav">
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>
@@ -18,7 +16,7 @@
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/FAQ.php' ? 'active' : ''; ?>" href="/FAQ.php">Filter</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/FAQ.php' ? 'active' : ''; ?>" href="/FAQ.php">Feed</a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
