@@ -1,15 +1,14 @@
 <footer>
-
-    <div class="container">
-        <div class="row align-items-center">
+    <div class="container footer-container">
+        <div class="row align-items-center footer-container">
             <div class="col">
-                <img src="">
+                <img class="footerIcons" src="/resources/media/icons/info.pg">
             </div>
             <div class="col">
-                <img src="">
+                <img class="footerIcons" src="/resources/media/icons/github.png">
             </div>
             <div class="col">
-                <img src="/resources/media/icons/">
+                <img class="footerIcons" src="/resources/media/icons/question.png">
             </div>
         </div>
     </div>
