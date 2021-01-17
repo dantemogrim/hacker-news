@@ -48,8 +48,8 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 
 1. Clone or fork this repository to your computer.
 2. Open up your terminal and `cd` into the project folder.
-3. Create a local server by using the following command: `php -S localhost:1337/index.php`
-4. Open in your browser, write the name of your localhost in the url followed by `/index.php` and access the project from there.
+3. Create a local server by using the following command: `php -S localhost:1337`
+4. Open in your browser, write the name of your localhost in the url followed by `/public/index.php` and access the project from there.
 
 ## :computer: Testers
 

@@ -3,7 +3,7 @@ the essential functionality of the site. -->
 <?php require __DIR__ . '/header.php';
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/views/gui-login.php');
+    redirect('/public/views/gui-login.php');
 endif;
 
 
@@ -34,7 +34,7 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
             <p class="card-text"><?= $articlePost['content']; ?></p>
             <span class="badge bg-warning text-dark">By: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
             <span class="badge bg-success"><img class="smiley" src="/public/resources/media/icons/smiley.png"> (amount) smiles</span>
-            <a href="#">comments</a>
+            <a href="/public/views/gui-comments.php">comments</a>
         </div>
     </div>
 

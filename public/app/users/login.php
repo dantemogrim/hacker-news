@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php'; // Connect to database.
 
-
 // Check if e-mail & passphrase exist in the post request.
 if (isset($_POST['username'], $_POST['passphrase'])) {
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
