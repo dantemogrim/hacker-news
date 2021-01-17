@@ -26,23 +26,20 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
     $singlePostAuthor = $postAuthor->fetch(PDO::FETCH_ASSOC);
 
     ?>
-    <p>
 
-
-    </p>
 
     <div class="card">
-        <h5 class="card-header"><?= $singlePostAuthor['username']; ?></h5>
+        <h5 class="card-header"><a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a></h5>
         <div class="card-body">
-            <h5 class="card-title"><?= $articlePost['title']; ?></h5>
             <p class="card-text"><?= $articlePost['content']; ?></p>
-            <a href="<?= $articlePost['link']; ?>" target="_blank">Source Code: <?= $articlePost['link']; ?></a>
-            <a href="#" class="btn btn-primary">Read More</a>
-            <p>Created:<?= $articlePost['created_at']; ?></p>
+            <span class="badge bg-warning text-dark">By: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
+            <span class="badge bg-success"><img class="smiley" src="/public/resources/media/icons/smiley.png"> (amount) smiles</span>
+            <a href="#">comments</a>
         </div>
     </div>
 
     <br>
+
 
 <?php endforeach; ?>
 

@@ -23,7 +23,7 @@
         <?php if (isset($_SESSION['loggedIn'])) : ?>
         <?php else : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/gui-register.php' ? 'active' : ''; ?>" href="/views/gui-register.php">Register</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/gui-register.php' ? 'active' : ''; ?>" href="/public/views/gui-register.php">Register</a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
