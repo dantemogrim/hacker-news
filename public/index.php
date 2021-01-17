@@ -7,7 +7,7 @@ if (!isset($_SESSION['loggedIn'])) :
 endif;
 
 
-// Checking if e-mail already exists in database.
+// Fetching all posts from database.
 $posts = $pdo->prepare('SELECT * FROM posts ORDER BY created_at DESC');
 $posts->execute();
 $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);

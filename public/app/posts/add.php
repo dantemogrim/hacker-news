@@ -39,4 +39,4 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     $statement->execute();
 
 endif;
-redirect('/');
+redirect('/../public/index.php');

@@ -6,7 +6,7 @@ require __DIR__ . '/../autoload.php';
 
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/login.php');
+    redirect('/public/login.php');
 endif;
 
 if (isset($_POST['comment'])) :
@@ -19,17 +19,18 @@ if (isset($_POST['comment'])) :
         // redirect('/gui-register.php');
     }
 
-    $userId = $_SESSION['loggedIn']['userId'];
+    $username = $_SESSION['loggedIn']['username'];
     $createdAt = date("Ymd");
+    $text = $_POST['comment'];
 
     // Insert into SQLite database.
     $statement = $pdo->prepare('INSERT INTO comments (comment_author, text, comment_created)
     VALUES (:comment_author, :text, :comment_created)');
 
-    $statement->bindParam(':comment_author', $comment_author, PDO::PARAM_STR);
+    $statement->bindParam(':comment_author', $username, PDO::PARAM_STR);
     $statement->bindParam(':text', $text, PDO::PARAM_STR);
     $statement->bindParam(':comment_created', $createdAt, PDO::PARAM_STR);
     $statement->execute();
 
 endif;
-redirect('/');
+redirect('../../views/gui-comments.php');

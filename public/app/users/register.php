@@ -64,8 +64,8 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     ];
 
     // Take the user to the index page as soon as the registration is finished.
-    redirect('/index.php');
+    redirect('../../index.php');
 };
 
 // If things don't go through - take the user back to the register page.
-redirect('/gui-register.php');
+redirect('../../views/gui-register.php');

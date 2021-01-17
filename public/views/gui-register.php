@@ -2,7 +2,7 @@
 
 <h1>Register</h1>
 <div class="register-container">
-    <form action="app/users/register.php" method="post">
+    <form action="../app/users/register.php" method="post">
         <div class="form-group">
             <label for="email">E-mail:</label>
             <input class="form-control" type="email" name="email" id="email" required>
