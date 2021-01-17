@@ -68,4 +68,4 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
 };
 
 // If things don't go through - take the user back to the register page.
-redirect('../../views/gui-register.php');
+redirect('../../front/gui-register.php');

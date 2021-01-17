@@ -1,10 +1,10 @@
-<?php require __DIR__ . '/../header.php'; ?>
+<?php require __DIR__ . '/../../header.php'; ?>
 
 <article>
     <h1>Add Post</h1>
 
 
-    <form action="../app/posts/add.php" method="post">
+    <form action="/public/back/posts/add-post.php" method="post">
         <div class="form-group">
             <label for="title">Title:</label>
             <input class="form-control" type="text" name="title" id="title" required>

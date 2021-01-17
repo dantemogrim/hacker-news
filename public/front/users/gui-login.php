@@ -1,9 +1,9 @@
-<?php require __DIR__ . '/../header.php'; ?>
+<?php require __DIR__ . '/../../header.php'; ?>
 
 <article>
     <h1>Login</h1>
 
-    <form action="/public/app/users/login.php" method="post">
+    <form action="/public/back/users/login.php" method="post">
         <div class="form-group">
             <label for="username">Username:</label>
             <input class="form-control" type="text" name="username" id="username" required>
@@ -27,6 +27,6 @@
 
 <br>
 
-<a href="/public/views/gui-register.php">
+<a href="/public/front/gui-register.php">
     <p>New to this place? Click here to register.</p>
 </a>

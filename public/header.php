@@ -1,5 +1,5 @@
 <!-- Gets the backend up and running. -->
-<?php require __DIR__ . '/./app/autoload.php'; ?>
+<?php require __DIR__ . '/./back/autoload.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

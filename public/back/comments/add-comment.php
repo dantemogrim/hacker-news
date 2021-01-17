@@ -6,11 +6,17 @@ require __DIR__ . '/../autoload.php';
 
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/public/login.php');
+    redirect('/public/front/users/gui-login.php');
 endif;
 
+// Is the container properly filled out - if yes then sanitize.
 if (isset($_POST['comment'])) :
     $comment = trim(filter_var($_POST['comment'], FILTER_SANITIZE_STRING));
+    // $post_id = $_GET['id']; the article/post..
+    // $date
+    $username = $_SESSION['loggedIn']['username'];
+    $createdAt = date("Ymd");
+    $text = $_POST['comment'];
 
     if (empty($comment)) {
         echo 'You need to type something in order to submit your comment.';
@@ -19,9 +25,7 @@ if (isset($_POST['comment'])) :
         // redirect('/gui-register.php');
     }
 
-    $username = $_SESSION['loggedIn']['username'];
-    $createdAt = date("Ymd");
-    $text = $_POST['comment'];
+
 
     // Insert into SQLite database.
     $statement = $pdo->prepare('INSERT INTO comments (comment_author, text, comment_created)
@@ -33,4 +37,4 @@ if (isset($_POST['comment'])) :
     $statement->execute();
 
 endif;
-redirect('../../views/gui-comments.php');
+redirect('../../front/comments/gui-comments.php');

@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../header.php'; ?>
+<?php require __DIR__ . '/../../header.php'; ?>
 
 <h2><i>Your profile</i></h2>
 <h1><?php echo $_SESSION['loggedIn']['username']; ?> </h1>
@@ -22,6 +22,6 @@ Comments:
 <ul>Edit Comments</ul>
 <br>
 
-<a href="/public/views/gui-account-settings.php">
+<a href="/public/front/users/gui-acc-settings.php">
     Account Settings
 </a>

@@ -4,13 +4,13 @@
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/gui-profile.php' ? 'active' : ''; ?>" href="/public/views/gui-profile.php"><?php echo $_SESSION['loggedIn']['username']; ?></a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-profile.php' ? 'active' : ''; ?>" href="/public/front/users/gui-profile.php"><?php echo $_SESSION['loggedIn']['username']; ?></a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/gui-add-post.php' ? 'active' : ''; ?>" href="/public/views/gui-add-post.php">Add Post</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/posts/gui-add-post.php' ? 'active' : ''; ?>" href="/public/front/posts/gui-add-post.php">Add Post</a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
@@ -23,19 +23,19 @@
         <?php if (isset($_SESSION['loggedIn'])) : ?>
         <?php else : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/gui-register.php' ? 'active' : ''; ?>" href="/public/views/gui-register.php">Register</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-register.php' ? 'active' : ''; ?>" href="/public/front/users/gui-register.php">Register</a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
         <li class="nav-item">
-            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/faq.php' ? 'active' : ''; ?>" href="/public/views/faq.php">FAQ</a>
+            <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/faq.php' ? 'active' : ''; ?>" href="/public/front/faq.php">FAQ</a>
         </li><!-- /nav-item -->
 
         <li class="nav-item">
             <?php if (isset($_SESSION['loggedIn'])) : ?>
-                <a class="nav-link" href="/public/app/users/logout.php">Logout</a>
+                <a class="nav-link" href="/public/back/users/logout.php">Logout</a>
             <?php else : ?>
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/views/gui-login.php' ? 'active' : ''; ?>" href="/public/views/gui-login.php">Login</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-login.php' ? 'active' : ''; ?>" href="/public/front/users/gui-login.php">Login</a>
             <?php endif; ?>
         </li><!-- /nav-item -->
 

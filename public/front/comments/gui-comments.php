@@ -1,7 +1,7 @@
-<?php require __DIR__ . '/../header.php';
+<?php require __DIR__ . '/../../header.php';
 
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/public/views/gui-login.php');
+    redirect('/public/front/users/gui-login.php');
 endif;
 
 
@@ -21,7 +21,7 @@ $allComments = $comments->fetchAll(PDO::FETCH_ASSOC);
 <article>
 
 
-    <form action="../app/comments/add.php" method="post">
+    <form action="/public/back/comments/add-comment.php" method="post">
         <div class="form-group">
             <label for="comment">
                 <h3>Comment this post:</h3>
@@ -39,13 +39,13 @@ $allComments = $comments->fetchAll(PDO::FETCH_ASSOC);
     <?php $commentAuthor = $pdo->prepare('SELECT username FROM users WHERE id = :comment_author');
     $commentAuthor->bindParam(':comment_author', $singleComment['comment_author'], PDO::PARAM_STR);
     $commentAuthor->execute();
-    $singleCommentAuthor = $commentAuthor->fetch(PDO::FETCH_ASSOC);
+    $singleCommentAuthor = $commentAuthor->fetchAll(PDO::FETCH_ASSOC);
 
     ?>
 
 
     <div class="card">
-        <h5 class="card-header">by: <?= $singleCommentAuthor['username']; ?></h5>
+        <h5 class="card-header">by: <?= $singleComment['comment_author'] ?></h5>
         <div class="card-body">
             <p class="card-text"><?= $singleComment['text']; ?></p>
         </div>
