@@ -9,6 +9,8 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
     $passphrase = password_hash($_POST['passphrase'], PASSWORD_DEFAULT);
+    $avatar = 'avatar-placeholder.png';
+    $bio = 'Empty.';
 
     if (empty($email) || empty($username) || empty($passphrase)) {
         echo 'Fill in all the fields, please.';
@@ -43,11 +45,13 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
 
 
     // If everything above goes through, inserts the new user to the database.
-    $sql = "INSERT INTO users (email, username, passphrase) VALUES (:email, :username, :passphrase)";
+    $sql = "INSERT INTO users (email, username, passphrase, avatar, bio) VALUES (:email, :username, :passphrase, :avatar, :bio)";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
-    $statement->bindParam(':passphrase', $passphrase);
+    $statement->bindParam(':passphrase', $passphrase, PDO::PARAM_STR);
+    $statement->bindParam(':avatar', $avatar, PDO::PARAM_STR);
+    $statement->bindParam(':bio', $bio, PDO::PARAM_STR);
     $statement->execute();
 
 
@@ -60,7 +64,9 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $_SESSION['loggedIn'] = [
         'username' => $newUser['username'],
         'email' => $newUser['email'],
-        'userId' => $newUser['id']
+        'userId' => $newUser['id'],
+        'avatar' => $newUser['avatar'],
+        'bio' => $newUser['bio']
     ];
 
     // Take the user to the index page as soon as the registration is finished.
