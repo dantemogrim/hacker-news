@@ -1,9 +1,5 @@
 <?php require __DIR__ . '/../../header.php';
 
-if (isset($_FILES['avatar'])) {
-    move_uploaded_file($_FILES['avatar']['tmp_name'], __DIR__ . '/public/back/users/avatars/store');
-}
-
 
 ?>
 
@@ -12,7 +8,14 @@ if (isset($_FILES['avatar'])) {
 <h2><i>Hello</i></h2>
 <h1><?php echo $_SESSION['loggedIn']['username']; ?> </h1>
 
-<img src="">
+
+<?php
+$path = '/public/back/users/avatars/store/';
+
+?>
+
+<img src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
+
 
 <br>
 
@@ -20,7 +23,7 @@ if (isset($_FILES['avatar'])) {
     <div>
         <label for="avatar">Choose a PNG image to upload</label>
         <br>
-        <input type="file" name="avatar" id="avatar" accept=".png" required>
+        <input type="file" name="avatar" id="avatar" accept=".png, .jpg" required>
     </div>
 
     <button type="submit">Upload</button>
