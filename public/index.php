@@ -27,7 +27,9 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="card">
-        <h5 class="card-header"><a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a></h5>
+        <h5 class="card-header">
+            <a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a>
+        </h5>
         <div class="card-body">
             <p class="card-text"><?= $articlePost['description']; ?></p>
             <span class="badge bg-warning text-dark">By: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>

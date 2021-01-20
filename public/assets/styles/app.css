@@ -32,6 +32,15 @@ div.card {
   max-width: 20px;
 }
 
+.profile-picture {
+  width: 10vw;
+}
+
+.navatar {
+  width: 2vw;
+  border-radius: 50%;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-evenly;

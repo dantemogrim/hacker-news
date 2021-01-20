@@ -10,7 +10,7 @@ endif; ?>
 <br>
 
 <?php $path = '/public/back/users/avatars/store/'; ?>
-<img src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
+<img class="profile-picture" src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
 
 <br>
 <form action="/public/back/users/avatars/edit-avatar.php" method="post" enctype="multipart/form-data">

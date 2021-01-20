@@ -4,7 +4,10 @@
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-profile.php' ? 'active' : ''; ?>" href="/public/front/users/gui-profile.php"><?php echo $_SESSION['loggedIn']['username']; ?></a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-profile.php' ? 'active' : ''; ?>" href="/public/front/users/gui-profile.php">
+                    <?php $path = '/public/back/users/avatars/store/'; ?>
+                    <img class="navatar" src="<?= $path . $_SESSION['loggedIn']['avatar']; ?>">
+                    <?php echo $_SESSION['loggedIn']['username']; ?></a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
