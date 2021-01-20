@@ -34,7 +34,7 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
             <p class="card-text"><?= $articlePost['description']; ?></p>
             <span class="badge bg-warning text-dark">By: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
             <span class="badge bg-success"><img class="smiley" src="/public/resources/media/icons/smiley.png"> (amount) smiles</span>
-            <a href="/public/front/comments/gui-comments.php">comments</a>
+            <a href="/public/front/comments/add-cmnt.php">comments</a>
         </div>
     </div>
 

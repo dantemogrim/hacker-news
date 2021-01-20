@@ -27,6 +27,6 @@
 
 <br>
 
-<a href="/public/front/gui-ls-register.php">
+<a href="/public/front/users/gui-ls-register.php">
     <p>New to this place? Click here to register.</p>
 </a>

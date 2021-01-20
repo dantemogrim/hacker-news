@@ -2,14 +2,14 @@
 
 <ul>
     <div class="alert alert-primary" role="alert">
-        <a href="/public/front/users/gui-reset-pass.php">
-            <p> Do you want to reset your passphrase? </p>
+        <a href="/public/front/users/gui-change-pass.php">
+            <p> Do you want to change your passphrase? </p>
         </a>
     </div>
 
-    <div class="alert alert-danger" role="alert">
-        <a href="/public/front/users/gui-reset-email.php">
-            <p> Do you want to reset your email? </p>
+    <div class="alert alert-primary" role="alert">
+        <a href="/public/front/users/gui-change-email.php">
+            <p> Do you want to change your email? </p>
         </a>
     </div>
 

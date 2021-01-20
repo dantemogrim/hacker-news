@@ -40,7 +40,7 @@ endif; ?>
         ⚙️
     </a>
     <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Account Settings</a>
-    <a href="/public/front/users/gui-reset-bio.php" class="list-group-item list-group-item-action">Edit Bio</a>
+    <a href="/public/front/users/gui-change-bio.php" class="list-group-item list-group-item-action">Edit Bio</a>
     <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Manage Comments</a>
     <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Manage Posts</a>
 </div>

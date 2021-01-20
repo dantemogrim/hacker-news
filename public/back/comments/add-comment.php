@@ -37,4 +37,4 @@ if (isset($_POST['comment'])) :
     $statement->execute();
 
 endif;
-redirect('../../front/comments/gui-comments.php');
+redirect('../../front/comments/add-cmnt.php');

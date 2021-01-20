@@ -1,6 +1,6 @@
 <?php require __DIR__ . '/../../header.php'; ?>
 
-<h3>Here you can reset your passphrase.</h3>
+<h3>Here you can change your passphrase.</h3>
 <br>
 <form>
     <div class="mb-3">
