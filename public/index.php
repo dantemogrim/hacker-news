@@ -3,7 +3,7 @@ the essential functionality of the site. -->
 <?php require __DIR__ . '/header.php';
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/public/front/users/gui-login.php');
+    redirect('/public/front/users/gui-ls-login.php');
 endif;
 
 

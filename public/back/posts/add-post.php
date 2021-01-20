@@ -21,7 +21,7 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
         echo 'Fill in all the fields, please.';
 
         exit();
-        // redirect('/gui-register.php');
+        // redirect('/gui-ls-register.php');
     }
 
     $userId = $_SESSION['loggedIn']['userId'];

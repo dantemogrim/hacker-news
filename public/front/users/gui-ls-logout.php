@@ -7,6 +7,6 @@
     <p class="mb-0">Welcome back anytime!</p>
 </div>
 
-<a href="/public/front/users/gui-login.php">
+<a href="/public/front/users/gui-ls-login.php">
     <p>Want to head back to our login page? Click here.</p>
 </a>

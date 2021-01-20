@@ -6,7 +6,7 @@ require __DIR__ . '/../autoload.php';
 
 // Check if the user is logged in - otherwise redirect.
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/public/front/users/gui-login.php');
+    redirect('/public/front/users/gui-ls-login.php');
 endif;
 
 // Is the container properly filled out - if yes then sanitize.
@@ -22,7 +22,7 @@ if (isset($_POST['comment'])) :
         echo 'You need to type something in order to submit your comment.';
 
         exit();
-        // redirect('/gui-register.php');
+        // redirect('/gui-ls-register.php');
     }
 
 

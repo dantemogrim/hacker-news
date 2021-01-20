@@ -16,7 +16,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
         echo 'Fill in all the fields, please.';
 
         exit();
-        // redirect('/gui-register.php');
+        // redirect('/gui-ls-register.php');
     }
 
 
@@ -28,7 +28,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     if ($checkEmail && $checkEmail['email'] === $email) {
         echo 'We\'re sorry. That e-mail is already assigned to one of our users.';
         exit();
-        // redirect('/gui-register.php');
+        // redirect('/gui-ls-register.php');
     };
 
 
@@ -40,7 +40,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     if ($checkUsername && $checkUsername['username'] === $username) {
         echo 'That username is taken. Try another one.';
         exit();
-        // redirect('/gui-register.php');
+        // redirect('/gui-ls-register.php');
     };
 
 
@@ -74,4 +74,4 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
 };
 
 // If things don't go through - take the user back to the register page.
-redirect('../../front/gui-register.php');
+redirect('../../front/gui-ls-register.php');

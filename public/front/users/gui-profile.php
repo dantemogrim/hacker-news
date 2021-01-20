@@ -1,7 +1,7 @@
 <?php require __DIR__ . '/../../header.php';
 
 if (!isset($_SESSION['loggedIn'])) :
-    redirect('/public/front/users/gui-login.php');
+    redirect('/public/front/users/gui-ls-login.php');
 endif; ?>
 
 
@@ -14,7 +14,7 @@ endif; ?>
 
 <img src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
 
-<?php die(var_dump($_SESSION['loggedIn'])); ?>
+
 
 <br>
 

@@ -23,7 +23,7 @@
         <?php if (isset($_SESSION['loggedIn'])) : ?>
         <?php else : ?>
             <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-register.php' ? 'active' : ''; ?>" href="/public/front/users/gui-register.php">Register</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-ls-register.php' ? 'active' : ''; ?>" href="/public/front/users/gui-ls-register.php">Register</a>
             </li><!-- /nav-item -->
         <?php endif; ?>
 
@@ -35,7 +35,7 @@
             <?php if (isset($_SESSION['loggedIn'])) : ?>
                 <a class="nav-link" href="/public/back/users/logout.php">Logout</a>
             <?php else : ?>
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-login.php' ? 'active' : ''; ?>" href="/public/front/users/gui-login.php">Login</a>
+                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-ls-login.php' ? 'active' : ''; ?>" href="/public/front/users/gui-ls-login.php">Login</a>
             <?php endif; ?>
         </li><!-- /nav-item -->
 

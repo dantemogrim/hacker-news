@@ -13,7 +13,7 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
     if (empty($username) || empty($passphrase)) {
         echo 'Fill out all of the fields.';
         exit();
-        // redirect('/gui-login.php');
+        // redirect('/gui-ls-login.php');
     }
 
     // Check if the actual email already exists within the database.
@@ -25,13 +25,13 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
 
     if (!$user) {
         echo 'There is no account registered to that username.';
-        // redirect('/gui-login.php');
+        // redirect('/gui-ls-login.php');
         exit();
     }
 
     if (!password_verify($passphrase, $user['passphrase'])) {
         echo 'Wrong password.';
-        // redirect('/gui-login.php');
+        // redirect('/gui-ls-login.php');
         exit();
     }
     // If all goes well, create a session for the user as logged in.
@@ -49,4 +49,4 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
 };
 
 // If things go south, take the user back to the login page.
-redirect('/gui-login.php');
+redirect('/gui-ls-login.php');

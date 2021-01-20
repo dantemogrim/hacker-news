@@ -27,6 +27,6 @@
 
 <br>
 
-<a href="/public/front/users/gui-login.php">
+<a href="/public/front/users/gui-ls-login.php">
     <p>Already a member? Click here to get to our login page.</p>
 </a>
