@@ -58,15 +58,15 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $statement = $pdo->prepare('SELECT * FROM users WHERE username = :username');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
     $statement->execute();
-    $newUser = $statement->fetch(PDO::FETCH_ASSOC);
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     // Session for logging in the new user.
     $_SESSION['loggedIn'] = [
-        'username' => $newUser['username'],
-        'email' => $newUser['email'],
-        'userId' => $newUser['id'],
-        'avatar' => $newUser['avatar'],
-        'bio' => $newUser['bio']
+        'username' => $user['username'],
+        'avatar' => $user['avatar'],
+        'email' => $user['email'],
+        'bio' => $user['bio'],
+        'userId' => $user['id']
     ];
 
     // Take the user to the index page as soon as the registration is finished.

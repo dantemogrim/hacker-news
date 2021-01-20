@@ -28,6 +28,7 @@ if (isset($_FILES['avatar'])) {
         'username' => $user['username'],
         'avatar' => $user['avatar'],
         'email' => $user['email'],
+        'bio' => $user['bio'],
         'userId' => $user['id']
     ];
 }

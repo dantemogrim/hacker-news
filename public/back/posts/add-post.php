@@ -27,12 +27,16 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     $userId = $_SESSION['loggedIn']['userId'];
     $createdAt = date("Ymd");
 
+
+
     // Insert into SQLite database.
-    $statement = $pdo->prepare('INSERT INTO posts (title, content, link, created_at, user_id)
-    VALUES (:title, :content, :link, :created_at, :user_id)');
+    $statement = $pdo->prepare('INSERT INTO posts (title, description, link, created_at, user_id)
+    VALUES (:title, :description, :link, :created_at, :user_id)');
+
+
 
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
-    $statement->bindParam(':content', $article, PDO::PARAM_STR);
+    $statement->bindParam(':description', $article, PDO::PARAM_STR);
     $statement->bindParam(':link', $link, PDO::PARAM_STR);
     $statement->bindParam(':user_id', $userId, PDO::PARAM_STR);
     $statement->bindParam(':created_at', $createdAt, PDO::PARAM_STR);

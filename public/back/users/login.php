@@ -38,10 +38,10 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
     if (isset($user['passphrase']) && password_verify($passphrase, $user['passphrase'])) {
         $_SESSION['loggedIn'] = [
             'username' => $user['username'],
-            'email' => $user['email'],
-            'userId' => $user['id'],
             'avatar' => $user['avatar'],
-            'bio' => $user['bio']
+            'email' => $user['email'],
+            'bio' => $user['bio'],
+            'userId' => $user['id']
         ];
     }
 

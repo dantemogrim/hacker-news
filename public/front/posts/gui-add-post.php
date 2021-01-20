@@ -3,7 +3,6 @@
 <article>
     <h1>Add Post</h1>
 
-
     <form action="/public/back/posts/add-post.php" method="post">
         <div class="form-group">
             <label for="title">Title:</label>
