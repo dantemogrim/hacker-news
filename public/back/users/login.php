@@ -39,7 +39,9 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
         $_SESSION['loggedIn'] = [
             'username' => $user['username'],
             'email' => $user['email'],
-            'userId' => $user['id']
+            'userId' => $user['id'],
+            'avatar' => $user['avatar'],
+            'bio' => $user['bio']
         ];
     }
 

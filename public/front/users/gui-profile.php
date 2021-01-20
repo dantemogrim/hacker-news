@@ -14,6 +14,7 @@ endif; ?>
 
 <img src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
 
+<?php die(var_dump($_SESSION['loggedIn'])); ?>
 
 <br>
 
