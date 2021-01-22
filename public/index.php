@@ -31,8 +31,8 @@ $allPosts = fetchAllPosts($pdo);
 
 
     <div class="card">
-        <h5 class="card-header">
-            <a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a>
+        <h5 class="card-header"></h5>
+        <a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a>
         </h5>
         <div class="card-body">
             <p class="card-text"><?= $articlePost['description']; ?></p>
