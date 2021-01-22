@@ -6,7 +6,7 @@ endif;
 
 
 // Fetching all comments from database.
-$comments = $pdo->prepare('SELECT * FROM comments ORDER BY comment_created DESC');
+$comments = $pdo->prepare('SELECT * FROM comments INNER JOIN posts ON commented_post = post_id');
 $comments->execute();
 $allComments = $comments->fetchAll(PDO::FETCH_ASSOC);
 
