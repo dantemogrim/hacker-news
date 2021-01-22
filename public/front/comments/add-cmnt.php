@@ -4,17 +4,7 @@ if (!isset($_SESSION['loggedIn'])) :
     redirect('/public/front/users/gui-ls-login.php');
 endif;
 
-
-// Fetching all comments from database.
-$comments = $pdo->prepare('SELECT * FROM comments INNER JOIN posts ON commented_post = post_id');
-$comments->execute();
-$allComments = $comments->fetchAll(PDO::FETCH_ASSOC);
-
-// print_r($allPosts);
 ?>
-<!-- Need to bring in the ACTUAL article here and connect through sql.
- Why isn't user or date showing? Something weird with the foreach.
- Don't forget to put this in the backend! -->
 
 <h1>(ARTICLE)</h1>
 <br>

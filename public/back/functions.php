@@ -85,7 +85,6 @@ function fetchAlias(int $userId, PDO $pdo): string
     return $alias['username'];
 }
 
-
 function fetchPostComments(int $postId, PDO $pdo): array
 {
     $statement = $pdo->prepare('SELECT * FROM comments WHERE post_id = :post_id');
@@ -96,7 +95,7 @@ function fetchPostComments(int $postId, PDO $pdo): array
         die(var_dump($pdo->errorInfo()));
     }
 
-    $comments = $statement->fetch(PDO::FETCH_ASSOC);
+    $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if (!$comments) {
         return [];

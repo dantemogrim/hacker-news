@@ -10,31 +10,27 @@ if (!isset($_SESSION['loggedIn'])) :
 endif;
 
 // Is the container properly filled out - if yes then sanitize.
-if (isset($_POST['comment'])) :
-    $comment = trim(filter_var($_POST['comment'], FILTER_SANITIZE_STRING));
-    // $post_id = $_GET['id']; the article/post..
-    // $date
-    // $username = $_SESSION['loggedIn']['username'];
-    // $createdAt = date("Ymd");
-    // $text = $_POST['comment'];
+if (isset($_POST['comment'], $_POST['post_id'])) :
+    $text = trim(filter_var($_POST['comment'], FILTER_SANITIZE_STRING));
+    $postId = filter_var($_POST['post_id'], FILTER_SANITIZE_NUMBER_INT);
+    $userId = $_SESSION['loggedIn']['id'];
+    $createdAt = date("Ymd");
 
-    if (empty($comment)) {
-        echo 'You need to type something in order to submit your comment.';
-
-        exit();
-        // redirect('/gui-ls-register.php');
-    }
-
-
+    // if (empty($text)) {
+    //     echo 'You need to type something in order to submit your comment.';
+    //     exit();
+    //     // redirect('/gui-ls-register.php');
+    // }
 
     // Insert into SQLite database.
-    $statement = $pdo->prepare('INSERT INTO comments (comment_author, text, comment_created)
-    VALUES (:comment_author, :text, :comment_created)');
+    $statement = $pdo->prepare('INSERT INTO comments (user_id, post_id, text, comment_created)
+    VALUES (:user_id, :post_id, :text, :comment_created)');
 
-    $statement->bindParam(':comment_author', $username, PDO::PARAM_STR);
+    $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+    $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
     $statement->bindParam(':text', $text, PDO::PARAM_STR);
     $statement->bindParam(':comment_created', $createdAt, PDO::PARAM_STR);
     $statement->execute();
 
 endif;
-redirect('../../front/comments/add-cmnt.php');
+redirect("../../front/posts/gui-view-post.php?post_id=$postId");
