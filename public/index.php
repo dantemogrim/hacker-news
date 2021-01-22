@@ -8,11 +8,16 @@ endif;
 
 
 // Fetching all posts from database.
-$posts = $pdo->prepare('SELECT * FROM posts ORDER BY created_at DESC');
-$posts->execute();
-$allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
+//$posts = $pdo->prepare('SELECT * FROM posts ORDER BY created_at DESC');
+//$posts->execute();
+//$allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
 
 // print_r($allPosts);
+
+// print_r(fetchPosts($pdo));
+// $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
+$allPosts = fetchAllPosts($pdo);
+
 ?>
 
 <h1>HACKER NEWS - ARTICLES</h1>
@@ -22,7 +27,6 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
     $postAuthor->bindParam(':user_id', $articlePost['user_id'], PDO::PARAM_STR);
     $postAuthor->execute();
     $singlePostAuthor = $postAuthor->fetch(PDO::FETCH_ASSOC);
-
     ?>
 
 
@@ -34,7 +38,7 @@ $allPosts = $posts->fetchAll(PDO::FETCH_ASSOC);
             <p class="card-text"><?= $articlePost['description']; ?></p>
             <span class="badge bg-warning text-dark">By: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
             <span class="badge bg-success"><img class="smiley" src="/public/resources/media/icons/smiley.png"> (amount) smiles</span>
-            <a href="/public/front/comments/add-cmnt.php">comments</a>
+            <a href="/public/front/posts/gui-view-post.php?post_id=<?= $articlePost['id'] ?>">View Post</a>
         </div>
     </div>
 

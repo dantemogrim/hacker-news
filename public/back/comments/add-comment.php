@@ -14,9 +14,9 @@ if (isset($_POST['comment'])) :
     $comment = trim(filter_var($_POST['comment'], FILTER_SANITIZE_STRING));
     // $post_id = $_GET['id']; the article/post..
     // $date
-    $username = $_SESSION['loggedIn']['username'];
-    $createdAt = date("Ymd");
-    $text = $_POST['comment'];
+    // $username = $_SESSION['loggedIn']['username'];
+    // $createdAt = date("Ymd");
+    // $text = $_POST['comment'];
 
     if (empty($comment)) {
         echo 'You need to type something in order to submit your comment.';

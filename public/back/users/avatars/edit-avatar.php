@@ -9,7 +9,7 @@ if (isset($_FILES['avatar'])) {
     $profilePictureName =  date('ymd') . '-' . ($avatar['name']);
     $uploadedDir = __DIR__ . '/store/';
     $destination = $uploadedDir . $profilePictureName;
-    $id = $_SESSION['loggedIn']['userId'];
+    $id = $_SESSION['loggedIn']['id'];
     move_uploaded_file($avatar['tmp_name'], $destination);
 
     $sql = "UPDATE users SET avatar = :avatar WHERE id = :id";
@@ -29,7 +29,7 @@ if (isset($_FILES['avatar'])) {
         'avatar' => $user['avatar'],
         'email' => $user['email'],
         'bio' => $user['bio'],
-        'userId' => $user['id']
+        'id' => $user['id']
     ];
 }
 

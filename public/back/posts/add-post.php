@@ -24,7 +24,7 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
         // redirect('/gui-ls-register.php');
     }
 
-    $userId = $_SESSION['loggedIn']['userId'];
+    $userId = $_SESSION['loggedIn']['id'];
     $createdAt = date("Ymd");
 
 

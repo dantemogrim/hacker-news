@@ -66,7 +66,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
         'avatar' => $user['avatar'],
         'email' => $user['email'],
         'bio' => $user['bio'],
-        'userId' => $user['id']
+        'id' => $user['id']
     ];
 
     // Take the user to the index page as soon as the registration is finished.
