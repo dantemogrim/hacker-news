@@ -16,31 +16,33 @@ if (isset($_GET['post_id'])) {
     // redirect user
 }
 
-
-
 ?>
 
+<!-- Post. -->
 <div class="card">
     <h5 class="card-header">
         <a class="post-title-link" href="<?= $post['link']; ?>"><?= $post['title']; ?></a>
     </h5>
     <div class="card-body">
         <p class="card-text"><?= $post['description']; ?></p>
-        <span class="badge bg-warning text-dark">By: <?= fetchAlias($post['user_id'], $pdo) ?> <?= $post['created_at']; ?></span>
-        <span class="badge bg-success"><img class="smiley" src="/public/resources/media/icons/smiley.png"> (amount) smiles</span>
+        <span class="badge bg-dark">By: <?= fetchAlias($post['user_id'], $pdo) ?> <?= $post['created_at']; ?></span>
     </div>
-    <form action="/public/back/comments/add-comment.php" method="post">
-        <div class="form-group">
-            <label for="comment">
-                <h3>Comment this post:</h3>
-            </label>
-            <textarea class="form-control" type="text" name="comment" id="comment" rows="3" placeholder="Your text here." required></textarea>
-            <input type="hidden" name="post_id" id="post_id" value="<?= $postId ?>">
-            <small>(max x characters long)</small>
-        </div><!-- /form-group -->
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 </div>
+
+<br>
+<!-- Comment input field. -->
+<form action="/public/back/comments/add-comment.php" method="post">
+    <div class="form-group">
+        <label for="comment">
+            <h3>Comment this post:</h3>
+        </label>
+        <textarea class="form-control" type="text" name="comment" id="comment" rows="3" placeholder="Your text here." required></textarea>
+        <input type="hidden" name="post_id" id="post_id" value="<?= $postId ?>" maxlength="300">
+        <small>(300 characters maximum.)</small>
+    </div><!-- /form-group -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
 
 <?php foreach ($postComments as $postComment) : ?>
 
@@ -58,23 +60,25 @@ if (isset($_GET['post_id'])) {
 
             <?php if ($ownedBy) : ?>
                 <!-- Edit. -->
-                <form action="/public/front/posts/gui-edit-posts.php" method="post">
-                    <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
-                    <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
-                    <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
-                    <button type="submit" class="btn btn-primary"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>
-                </form>
-                <!-- Delete. -->
-                <form action="/public/back/comments/delete-comment.php" method="post">
-                    <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
-                    <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
-                    <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
-                    <button type="submit" class="btn btn-primary"><img class="like-icon" src="/public/resources/media/icons/eraser-bold.png"></button>
-                </form>
-
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <form action="/public/front/posts/gui-edit-posts.php" method="post">
+                        <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
+                        <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
+                        <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
+                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>
+                    </form>
+                    <!-- Delete. -->
+                    <form action="/public/back/comments/delete-comment.php" method="post">
+                        <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
+                        <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
+                        <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
+                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/eraser-bold.png"></button>
+                    </form>
+                </div>
             <?php endif; ?>
         </div>
     </div>
+
     <br>
 <?php endforeach ?>
 

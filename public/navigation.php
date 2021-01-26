@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="/public/index.php"><?php echo $config['title']; ?></a>
-    <ul class="navbar-nav">
+    <ul class="list-group list-group-horizontal">
+
+
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <li class="nav-item">
@@ -24,12 +26,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="/public/index.php?top">Top</a>
             </li>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['loggedIn'])) : ?>
-            <li class="nav-item">
-                <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '' ? 'active' : ''; ?>" href="#">Feed</a>
-            </li><!-- /nav-item -->
         <?php endif; ?>
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>

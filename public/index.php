@@ -17,8 +17,8 @@ if (isset($_GET['new'])) {
 
 ?>
 
-<h1>Welcome, <?= $_SESSION['loggedIn']['username']; ?>! 🐻‍❄️</h1>
-<h2>Here's the scoop for today:</h2>
+<h1 class="main-welcome">🌐 Hacker News 🌐</h1>
+<h4 class="main-welcome">Here's the scoop for today:</h4>
 <br>
 
 <?php foreach ($allPosts as $articlePost) : ?>
@@ -36,7 +36,7 @@ if (isset($_GET['new'])) {
 
     <!-- Article content. -->
     <div class="card">
-        <h5 class="card-header"> 🌐 <small>URL</small> 🔗
+        <h5 class="card-header"> <small class="tiny-text">URL:</small> 🔗
             <a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a>
         </h5>
         <div class="card-body">
@@ -46,7 +46,9 @@ if (isset($_GET['new'])) {
             <!-- </details> -->
             <br>
             <div class="d-flex flex-row bd-highlight mb-3">
-                <span class="post-author"><i>Posted by: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></i></span>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-dark">Posted by: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
+                </div>
                 <div class="votes">
                     <button class="smile" data-id="<?= $articlePost['id'] ?>">
                         <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>

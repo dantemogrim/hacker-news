@@ -13,15 +13,23 @@ body {
   color: var(--textColors);
 }
 
+.main-gif {
+  width: 7vw;
+}
+
+.main-welcome {
+  text-align: center;
+}
+
 div.card {
   color: black;
 }
 
-.post-title-link {
-  color: var(--textColor2);
+.tiny-text {
+  text-shadow: 4px 4px 8px blue;
 }
 
-.post-author {
+.post-title-link {
   color: var(--textColor2);
 }
 
@@ -31,17 +39,23 @@ div.card {
 }
 
 .profile-picture {
-  width: 10vw;
+  width: 30vw;
+  height: auto;
 }
 
 .navatar {
   border-radius: 50%;
-  width: 2vw;
+  width: 3vw;
 }
 
 .like-icon {
   max-width: 20px;
   width: 3vw;
+}
+
+/* Text where author is mentioned. */
+.bg-dark {
+  color: var(--textColors);
 }
 
 /* Button in index for smiles. */
