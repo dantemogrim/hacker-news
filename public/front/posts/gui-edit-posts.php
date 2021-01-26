@@ -10,7 +10,6 @@ endif; ?>
 
     <form action="/public/back/posts/edit-post.php" method="post">
         <p>For security reasons - you won't be able to change the original title or link - only the description.</p>
-        <p>Viewers will also be able to see if the original has been edited.</p>
         <p>This is to protect our users from data that might later be wrongfully manipulated.</p>
 
         <div class="form-group">

@@ -36,14 +36,14 @@ if (isset($_GET['new'])) {
 
     <!-- Article content. -->
     <div class="card">
-        <h5 class="card-header"> 🌐 URL 🔗
+        <h5 class="card-header"> 🌐 <small>URL</small> 🔗
             <a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a>
         </h5>
         <div class="card-body">
-            <details>
-                <summary>📓 Click 4 user publisher's details.</summary>
-                <p class="card-text"><?= $articlePost['description']; ?></p>
-            </details>
+            <!-- <details>
+                <summary>📓 Click 4 user publisher's details.</summary> -->
+            <p class="card-text"><?= $articlePost['description']; ?></p>
+            <!-- </details> -->
             <br>
             <div class="d-flex flex-row bd-highlight mb-3">
                 <span class="post-author"><i>Posted by: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></i></span>
@@ -52,11 +52,9 @@ if (isset($_GET['new'])) {
                         <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>
                     </button>
                     <span class="smiles"><?= fetchSmileAmount($articlePost['id'], $pdo) ?></span>
-                    <a class="" href="/public/front/posts/gui-view-post.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
+                    <a class="" href="/public/front/comments/gui-comment-section.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
                 </div>
             </div>
-
-
 
             <?php if ($ownedBy) : ?>
                 <!-- Edit. -->
