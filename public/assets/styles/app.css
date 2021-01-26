@@ -2,11 +2,9 @@
 
 /* Variable functions */
 :root {
-  --bgColor: #282828;
-  --hamburgerColor: #292929;
-  --navColor: #333366;
-  --headerColor: #;
-  --mainColor: #;
+  --bgColor: #2e2e2e;
+  --sectionColor: #292929;
+  --textColor2: #333366;
   --textColors: #f8f9f3;
 }
 
@@ -15,21 +13,21 @@ body {
   color: var(--textColors);
 }
 
-nav {
-  background-color: var(--navColor);
-}
-
 div.card {
   color: black;
 }
 
 .post-title-link {
-  color: #333366;
+  color: var(--textColor2);
+}
+
+.post-author {
+  color: var(--textColor2);
 }
 
 .smiley {
-  width: 3vw;
   max-width: 20px;
+  width: 3vw;
 }
 
 .profile-picture {
@@ -37,8 +35,20 @@ div.card {
 }
 
 .navatar {
-  width: 2vw;
   border-radius: 50%;
+  width: 2vw;
+}
+
+.like-icon {
+  max-width: 20px;
+  width: 3vw;
+}
+
+/* Button in index for smiles. */
+.smile {
+  background-color: white;
+  border: none;
+  outline: none;
 }
 
 .footer-container {
@@ -47,6 +57,7 @@ div.card {
 }
 
 .footerIcons {
-  width: 10vw;
-  max-width: 70px;
+  max-width: 50px;
+  min-width: 40px;
+  width: 4vw;
 }

@@ -16,12 +16,6 @@ if (isset($_POST['comment'], $_POST['post_id'])) :
     $userId = $_SESSION['loggedIn']['id'];
     $createdAt = date("Ymd");
 
-    // if (empty($text)) {
-    //     echo 'You need to type something in order to submit your comment.';
-    //     exit();
-    //     // redirect('/gui-ls-register.php');
-    // }
-
     // Insert into SQLite database.
     $statement = $pdo->prepare('INSERT INTO comments (user_id, post_id, text, comment_created)
     VALUES (:user_id, :post_id, :text, :comment_created)');

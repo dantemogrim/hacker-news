@@ -1,5 +1,10 @@
 <?php require __DIR__ . '/../../header.php'; ?>
 
+<?php
+if (!isset($_SESSION['loggedIn'])) :
+    redirect('/public/front/users/gui-ls-login.php');
+endif; ?>
+
 <article>
     <h1>Add Post</h1>
 
@@ -11,14 +16,14 @@
 
         <div class="form-group">
             <label for="article">Article description:</label>
-            <textarea class="form-control" type="text" name="article" id="article" rows="3" placeholder="Type your content here." required></textarea>
-            <small>(max x characters long)</small>
+            <textarea class="form-control" type="text" name="article" id="article" rows="3" placeholder="Type your content here." maxlength="300" required></textarea>
+            <small>(Maximum length is 300 characters long.)</small>
         </div><!-- /form-group -->
 
 
         <div class="form-group">
             <label for="link">Link:</label>
-            <input class="form-control" type="url" name="link" id="link" value="http://" required>
+            <input class="form-control" type="url" name="link" id="link" value="https://" required>
             <small class="form-text text-muted">Your source of information here.</small>
         </div><!-- /form-group -->
 

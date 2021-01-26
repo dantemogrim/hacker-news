@@ -14,3 +14,5 @@
     <p> Iure sapiente? Mail us at information_station@hackernews.com
 
 </article>
+
+<?php require __DIR__ . '/../footer.php'; ?>

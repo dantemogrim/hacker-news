@@ -15,8 +15,7 @@
 
 </footer>
 
-<script src="/assets/scripts/app.js"></script>
-
+<script src="/public/assets/scripts/app.js"></script>
 </body>
 
 </html>

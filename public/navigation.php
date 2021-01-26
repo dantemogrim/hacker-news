@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="/public/index.php"><?php echo $config['title']; ?></a>
     <ul class="navbar-nav">
 
@@ -15,6 +15,15 @@
             <li class="nav-item">
                 <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/posts/gui-add-post.php' ? 'active' : ''; ?>" href="/public/front/posts/gui-add-post.php">Add Post</a>
             </li><!-- /nav-item -->
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['loggedIn'])) : ?>
+            <li class="nav-item">
+                <a class="nav-link" href="/public/index.php?new">New</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/public/index.php?top">Top</a>
+            </li>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['loggedIn'])) : ?>

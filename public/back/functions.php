@@ -12,7 +12,7 @@ function redirect(string $path)
 function loggedIn()
 {
     if (!isset($_SESSION['loggedIn'])) {
-        redirect('/login,php');
+        redirect('/public/front/users/gui-ls-login.php');
     }
 }
 
@@ -94,12 +94,53 @@ function fetchPostComments(int $postId, PDO $pdo): array
     if (!$statement) {
         die(var_dump($pdo->errorInfo()));
     }
-
+    // Make them order by date.
     $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $reversedComments = array_reverse($comments);
 
-    if (!$comments) {
+    if (!$reversedComments) {
         return [];
     }
 
-    return $comments;
+    return $reversedComments;
+}
+
+function fetchSmileAmount(string $postId, PDO $pdo): string
+{
+    $statement = $pdo->prepare('SELECT COUNT(post_id) AS likes FROM smiles WHERE post_id = :post_id');
+    $statement->bindParam(":post_id", $postId, PDO::PARAM_INT);
+    $statement->execute();
+
+    if (!$statement) {
+        die(var_dump($pdo->errorInfo()));
+    }
+
+    $smiles = $statement->fetch(PDO::FETCH_ASSOC);
+
+    return $smiles['likes'];
+}
+
+
+function fetchAllSmiles(PDO $pdo): array
+{
+    $allPosts = fetchAllPosts($pdo);
+    $allPostsWithSmiles = [];
+
+    foreach ($allPosts as $post) {
+        $numberOfSmiles = fetchSmileAmount($post['id'], $pdo);
+        $post['smiles'] = $numberOfSmiles;
+        $allPostsWithSmiles[] = $post;
+    }
+
+    usort($allPostsWithSmiles, function ($postTwo, $postOne) {
+        if ($postOne['smiles'] > $postTwo['smiles']) {
+            return 1;
+        } else if ($postOne['smiles'] < $postTwo['smiles']) {
+            return -1;
+        } else if ($postOne['smiles'] === $postTwo['smiles']) {
+            return 0;
+        }
+    });
+
+    return $allPostsWithSmiles;
 }

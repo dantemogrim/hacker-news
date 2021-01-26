@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+//$errors = [];
+
 // Checking that everything from register is properly filled out.
 if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
     $passphrase = password_hash($_POST['passphrase'], PASSWORD_DEFAULT);
     $avatar = 'avatar-placeholder.png';
-    $bio = 'Empty.';
+    $bio = 'Tell us something about yourself..';
 
     if (empty($email) || empty($username) || empty($passphrase)) {
         echo 'Fill in all the fields, please.';
-
         exit();
         // redirect('/gui-ls-register.php');
     }
@@ -28,7 +29,6 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     if ($checkEmail && $checkEmail['email'] === $email) {
         echo 'We\'re sorry. That e-mail is already assigned to one of our users.';
         exit();
-        // redirect('/gui-ls-register.php');
     };
 
 
@@ -40,11 +40,10 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     if ($checkUsername && $checkUsername['username'] === $username) {
         echo 'That username is taken. Try another one.';
         exit();
-        // redirect('/gui-ls-register.php');
     };
 
 
-    // If everything above goes through, inserts the new user to the database.
+    // If all goes well, insert the new user to the database.
     $sql = "INSERT INTO users (email, username, passphrase, avatar, bio) VALUES (:email, :username, :passphrase, :avatar, :bio)";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
@@ -60,7 +59,7 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $statement->execute();
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-    // Session for logging in the new user.
+    // Create a session for our new user.
     $_SESSION['loggedIn'] = [
         'username' => $user['username'],
         'avatar' => $user['avatar'],

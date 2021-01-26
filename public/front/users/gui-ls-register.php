@@ -1,6 +1,11 @@
-<?php require __DIR__ . '/../../header.php'; ?>
+<?php
+require __DIR__ . '/../../header.php';
+
+?>
+
 
 <h1>Register</h1>
+
 <div class="register-container">
     <form action="../../back/users/register.php" method="post">
         <div class="form-group">

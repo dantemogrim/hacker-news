@@ -1,5 +1,10 @@
 <?php require __DIR__ . '/../../header.php'; ?>
 
+<?php
+if (!isset($_SESSION['loggedIn'])) :
+    redirect('/public/front/users/gui-ls-login.php');
+endif; ?>
+
 <ul>
     <div class="alert alert-primary" role="alert">
         <a href="/public/front/users/gui-change-pass.php">

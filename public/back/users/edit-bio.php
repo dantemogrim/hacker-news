@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+// Check if user got here properly.
+if (!isset($_SESSION['loggedIn'])) :
+    redirect('/public/front/users/gui-ls-login.php');
+endif;
+
 if (isset($_POST['bio'])) {
     $bio = trim(filter_var($_POST['bio'], FILTER_SANITIZE_STRING));
     $id = (int)$_SESSION['loggedIn']['id'];
