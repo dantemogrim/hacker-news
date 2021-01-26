@@ -3,6 +3,13 @@
 <article>
     <h1>Login</h1>
 
+    <?php if (isset($_SESSION['errors'])) : ?>
+        <?php foreach ($_SESSION['errors'] as $error) : ?>
+            <?php echo $error; ?>
+        <?php endforeach; ?>
+        <?php unset($_SESSION['errors']) ?>
+    <?php endif; ?>
+
     <form action="/public/back/users/login.php" method="post">
         <div class="form-group">
             <label for="username">Username:</label>
@@ -17,9 +24,9 @@
             <small class="form-text text-muted"></small>
         </div><!-- /form-group -->
 
-        <a href="#">
+        <!-- <a href="#">
             <p>Lost your passphrase? Click here.</p>
-        </a>
+        </a> -->
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
+$_SESSION['errors'] = [];
+
 // Check if user got here properly.
 if (!isset($_SESSION['loggedIn'])) :
     redirect('/public/front/users/gui-ls-login.php');
@@ -28,7 +30,7 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     if (!$user) {
-        echo 'There is no account registered to that username.';
+        $_SESSION['errors'] = 'There is no account registered to that username.';
         exit();
     }
 

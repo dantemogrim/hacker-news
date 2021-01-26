@@ -14,7 +14,7 @@ endif; ?>
 
         <div class="form-group">
             <label for="article">Article description:</label>
-            <textarea class="form-control" type="text" name="article" id="article" rows="3" placeholder="Type your content here." maxlength="300" required></textarea>
+            <textarea class="form-control" type="text" name="post_update" id="post_update" rows="3" placeholder="Type your content here." maxlength="300" required></textarea>
             <small>(Maximum length is 300 characters long.)</small>
         </div><!-- /form-group -->
 
