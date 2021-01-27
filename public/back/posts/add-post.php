@@ -5,12 +5,12 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 // Check if user got here properly.
-if (!isset($_SESSION['loggedIn'])) :
+if (!isset($_SESSION['loggedIn'])) {
     redirect('/public/front/users/gui-ls-login.php');
-endif;
+}
 
 // Check if forms are set and sanitize.
-if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
+if (isset($_POST['title'], $_POST['article'], $_POST['link'])) {
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
     $article = trim(filter_var($_POST['article'], FILTER_SANITIZE_STRING));
     $link = trim(filter_var($_POST['link'], FILTER_SANITIZE_STRING));
@@ -33,6 +33,5 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     $statement->bindParam(':user_id', $userId, PDO::PARAM_STR);
     $statement->bindParam(':created_at', $createdAt, PDO::PARAM_STR);
     $statement->execute();
-
-endif;
+}
 redirect('/../../public/index.php');

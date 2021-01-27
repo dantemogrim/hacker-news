@@ -10,7 +10,7 @@ if (!isset($_SESSION['loggedIn'])) :
 endif;
 
 // Is the container properly filled out - if yes then sanitize.
-if (isset($_POST['comment'], $_POST['post_id'])) :
+if (isset($_POST['comment'], $_POST['post_id'])) {
     $text = trim(filter_var($_POST['comment'], FILTER_SANITIZE_STRING));
     $postId = filter_var($_POST['post_id'], FILTER_SANITIZE_NUMBER_INT);
     $userId = $_SESSION['loggedIn']['id'];
@@ -25,6 +25,5 @@ if (isset($_POST['comment'], $_POST['post_id'])) :
     $statement->bindParam(':text', $text, PDO::PARAM_STR);
     $statement->bindParam(':comment_created', $createdAt, PDO::PARAM_STR);
     $statement->execute();
-
-endif;
+}
 redirect("../../front/comments/gui-cmnt-section.php?post_id=$postId");
