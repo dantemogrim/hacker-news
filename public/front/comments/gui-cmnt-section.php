@@ -2,7 +2,6 @@
 
 require __DIR__ . '../../../header.php';
 
-
 if (!isset($_SESSION['loggedIn'])) :
     redirect('/public/front/users/gui-ls-login.php');
 endif;
