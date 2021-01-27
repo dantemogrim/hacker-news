@@ -10,8 +10,13 @@ if (!isset($_SESSION['loggedIn'])) :
 endif;
 
 if (isset($_POST['bio'])) {
-    $bio = trim(filter_var($_POST['bio'], FILTER_SANITIZE_STRING));
+    $bio = trim(filter_var($_POST['bio'], FILTER_SANITIZE_SPECIAL_CHARS));
     $id = (int)$_SESSION['loggedIn']['id'];
+
+    if (empty($bio)) {
+        $_SESSION['errors'][] = "Field was empty. Try again.";
+        redirect('/public/front/users/gui-change-bio.php');
+    }
 
     $statement = $pdo->prepare("UPDATE users SET bio = :bio WHERE id = :id");
     $statement->bindParam(':id', $id, PDO::PARAM_INT);

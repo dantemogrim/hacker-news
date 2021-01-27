@@ -5,7 +5,10 @@
 
     <?php if (isset($_SESSION['errors'])) : ?>
         <?php foreach ($_SESSION['errors'] as $error) : ?>
-            <?php echo $error; ?>
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Woopsie! 🙀</h4>
+                <?php echo $error; ?></p>
+            </div>
         <?php endforeach; ?>
         <?php unset($_SESSION['errors']) ?>
     <?php endif; ?>

@@ -11,7 +11,7 @@ if (!isset($_SESSION['loggedIn'])) {
 
 // Is the container properly filled out - if yes then sanitize.
 if (isset($_POST['comment'], $_POST['post_id'])) {
-    $text = trim(filter_var($_POST['comment'], FILTER_SANITIZE_STRING));
+    $text = trim(filter_var($_POST['comment'], FILTER_SANITIZE_SPECIAL_CHARS));
     $postId = filter_var($_POST['post_id'], FILTER_SANITIZE_NUMBER_INT);
     $userId = $_SESSION['loggedIn']['id'];
     $createdAt = date("Ymd");

@@ -4,16 +4,14 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-
 // Check if e-mail & passphrase exist in the post request.
 if (isset($_POST['username'], $_POST['passphrase'])) {
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
     $passphrase = $_POST['passphrase'];
 
-    // Check if any fields are empty.
     if (empty($username) || empty($passphrase)) {
-        echo 'Fill out all of the fields.';
-        exit();
+        $_SESSION['errors'][] = "Fill in all the fields, please.";
+        redirect('/public/front/users/gui-ls-login.php');
     }
 
     // Check if the given email already exists within the database.
@@ -24,11 +22,12 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     if (!$user) {
-        $_SESSION['errors'][] = 'There is no account registered to that username.';
+        $_SESSION['errors'][] = "There is no account registered to that username.";
+        redirect('/public/front/users/gui-ls-login.php');
     }
 
     if (!password_verify($passphrase, $user['passphrase'])) {
-        $_SESSION['errors'][] = "Wrong password!";
+        $_SESSION['errors'][] = "Wrong password.";
         redirect('/public/front/users/gui-ls-login.php');
     }
 

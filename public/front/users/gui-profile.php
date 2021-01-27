@@ -9,6 +9,16 @@ endif; ?>
 <h1><?php echo $_SESSION['loggedIn']['username']; ?> </h1>
 <br>
 
+<?php if (isset($_SESSION['errors'])) : ?>
+    <?php foreach ($_SESSION['errors'] as $error) : ?>
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Woopsie! 🙀</h4>
+            <?php echo $error; ?></p>
+        </div>
+    <?php endforeach; ?>
+    <?php unset($_SESSION['errors']) ?>
+<?php endif; ?>
+
 <?php $path = '/public/back/users/avatars/store/'; ?>
 <img alt="Your chosen profile picture is viewed here. If you haven't uploaded one yet, it'll be an avatar placeholder picturing a simple cartoon face." class="profile-picture" src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
 
@@ -16,6 +26,7 @@ endif; ?>
 <form action="/public/back/users/avatars/change-avatar.php" method="post" enctype="multipart/form-data">
     <div>
         <label for="avatar">Edit profile picture here:</label>
+        <p><small>(Maximum file size = 3MB)</small></p>
         <br>
         <input type="file" name="avatar" id="avatar" accept=".png, .jpg" required>
     </div>

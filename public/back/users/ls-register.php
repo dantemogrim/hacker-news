@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-//$errors = [];
-
 // Checking that everything from register is properly filled out.
 if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
@@ -15,9 +13,8 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $bio = 'Tell us something about yourself..';
 
     if (empty($email) || empty($username) || empty($passphrase)) {
-        echo 'Fill in all the fields, please.';
-        exit();
-        // redirect('/gui-ls-register.php');
+        $_SESSION['errors'][] = "Fill in all the fields, please.";
+        redirect('/public/front/users/gui-ls-register.php');
     }
 
 
@@ -27,21 +24,19 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $statement->execute();
     $checkEmail = $statement->fetch(PDO::FETCH_ASSOC);
     if ($checkEmail && $checkEmail['email'] === $email) {
-        echo 'We\'re sorry. That e-mail is already assigned to one of our users.';
-        exit();
-    };
-
+        $_SESSION['errors'][] = "We're sorry. That e-mail is already assigned to one of our users.";
+        redirect('/public/front/users/gui-ls-register.php');
+    }
 
     // Checking if username already exists in database.
-    $statement = $pdo->prepare('SELECT username FROM users WHERE username = :username');
+    $statement = $pdo->prepare('SELECT * FROM users WHERE username = :username');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
     $statement->execute();
     $checkUsername = $statement->fetch(PDO::FETCH_ASSOC);
     if ($checkUsername && $checkUsername['username'] === $username) {
-        echo 'That username is taken. Try another one.';
-        exit();
-    };
-
+        $_SESSION['errors'][] = "That username is taken. Try another one.";
+        redirect('/public/front/users/gui-ls-register.php');
+    }
 
     // If all goes well, insert the new user to the database.
     $sql = "INSERT INTO users (email, username, passphrase, avatar, bio) VALUES (:email, :username, :passphrase, :avatar, :bio)";
@@ -52,7 +47,6 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
     $statement->bindParam(':avatar', $avatar, PDO::PARAM_STR);
     $statement->bindParam(':bio', $bio, PDO::PARAM_STR);
     $statement->execute();
-
 
     $statement = $pdo->prepare('SELECT * FROM users WHERE username = :username');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
@@ -68,7 +62,6 @@ if (isset($_POST['email'], $_POST['username'], $_POST['passphrase'])) {
         'id' => $user['id']
     ];
 
-    // Take the user to the index page as soon as the registration is finished.
     redirect('../../index.php');
 };
 

@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedIn'])) {
 // Check if forms are set and sanitize.
 if (isset($_POST['title'], $_POST['article'], $_POST['link'])) {
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
-    $article = trim(filter_var($_POST['article'], FILTER_SANITIZE_STRING));
+    $article = trim(filter_var($_POST['article'], FILTER_SANITIZE_SPECIAL_CHARS));
     $link = trim(filter_var($_POST['link'], FILTER_SANITIZE_STRING));
 
     if (empty($title) || empty($article) || empty($link)) {

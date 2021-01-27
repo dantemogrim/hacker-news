@@ -8,6 +8,16 @@ endif; ?>
 <article>
     <h1>Edit Bio</h1>
 
+    <?php if (isset($_SESSION['errors'])) : ?>
+        <?php foreach ($_SESSION['errors'] as $error) : ?>
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Woopsie! 🙀</h4>
+                <?php echo $error; ?></p>
+            </div>
+        <?php endforeach; ?>
+        <?php unset($_SESSION['errors']) ?>
+    <?php endif; ?>
+
     <form action="/public/back/users/change-bio.php" method="post">
         <div class="form-group">
             <label for="article">Type in your new bio here:</label>
