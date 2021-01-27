@@ -69,13 +69,13 @@ if (isset($_GET['post_id'])) {
                     <form action="/public/front/comments/gui-change-cmnt.php" method="post">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
-                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>
+                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil.png"></button>
                     </form>
                     <!-- Delete. -->
                     <form action="/public/back/comments/delete-cmnt.php" method="post">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
-                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/eraser-bold.png"></button>
+                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/trash.png"></button>
                     </form>
                 </div>
             <?php endif; ?>

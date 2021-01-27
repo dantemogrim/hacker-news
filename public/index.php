@@ -64,13 +64,13 @@ if (isset($_GET['new'])) {
                     <form action="/public/front/posts/gui-change-posts.php" method="post">
                         <input type="hidden" name="post_id" id="post_id" value="<?= $articlePost['id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $articlePost['user_id']; ?>">
-                        <button type="submit" class="btn btn-light p-2 bd-highlight"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>
+                        <button type="submit" class="btn btn-light p-2 bd-highlight"><img class="like-icon" src="/public/resources/media/icons/pencil.png"></button>
                     </form>
                     <!-- Delete. -->
                     <form action="/public/back/posts/delete-post.php" method="post">
                         <input type="hidden" name="post_id" id="post_id" value="<?= $articlePost['id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $articlePost['user_id']; ?>">
-                        <button type="submit" class="btn btn-light p-2 bd-highlight"><img class="like-icon" src="/public/resources/media/icons/eraser-bold.png"></button>
+                        <button type="submit" class="btn btn-light p-2 bd-highlight"><img class="like-icon" src="/public/resources/media/icons/trash.png"></button>
                     </form>
                 </div>
             <?php endif; ?>
