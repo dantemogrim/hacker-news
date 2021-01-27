@@ -51,27 +51,3 @@ if (isset($_POST['current-pass'], $_POST['new-pass'])) {
 };
 
 redirect('../../front/users/gui-confirm-pass.php');
-
-
-
-
-
-
-
-
-
-
-
-
-  //  $sql = "UPDATE users SET passphrase = :passphrase WHERE id = :id";
-  //  $statement = $pdo->prepare($sql);
- //   $statement->bindParam(':id', $id, PDO::PARAM_INT);
-  //  $statement->bindParam(':passphrase', $newPass, PDO::PARAM_STR);
- //   $statement->execute();
-
-   // setSessionData($id, $pdo);
-
-   // redirect('../../front/users/gui-confirm-pass.php');
-// };
-
-// redirect('../../front/gui-ls-register.php');

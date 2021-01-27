@@ -43,7 +43,7 @@
 
             <li class="nav-item">
                 <?php if (isset($_SESSION['loggedIn'])) : ?>
-                    <a class="nav-link" href="/public/back/users/logout.php">Logout</a>
+                    <a class="nav-link" href="/public/back/users/ls-logout.php">Logout</a>
                 <?php else : ?>
                     <a class="nav-link <?php echo $_SERVER['SCRIPT_NAME'] === '/public/front/users/gui-ls-login.php' ? 'active' : ''; ?>" href="/public/front/users/gui-ls-login.php">Login</a>
                 <?php endif; ?>

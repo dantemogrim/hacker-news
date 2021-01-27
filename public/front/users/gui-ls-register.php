@@ -8,7 +8,7 @@ require __DIR__ . '/../../header.php';
 <h1>Register</h1>
 
 <div class="register-container">
-    <form action="../../back/users/register.php" method="post">
+    <form action="../../back/users/ls-register.php" method="post">
         <div class="form-group">
             <label for="email">E-mail:</label>
             <input class="form-control" type="email" name="email" id="email" required>
