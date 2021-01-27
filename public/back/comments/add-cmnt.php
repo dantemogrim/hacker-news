@@ -5,9 +5,9 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 // Check if the user is logged in - otherwise redirect.
-if (!isset($_SESSION['loggedIn'])) :
+if (!isset($_SESSION['loggedIn'])) {
     redirect('/public/front/users/gui-ls-login.php');
-endif;
+}
 
 // Is the container properly filled out - if yes then sanitize.
 if (isset($_POST['comment'], $_POST['post_id'])) {
