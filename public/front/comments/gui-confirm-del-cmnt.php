@@ -1,4 +1,8 @@
-<?php require __DIR__ . '/../../header.php'; ?>
+<?php
+
+require __DIR__ . '/../../header.php';
+
+?>
 
 <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">Comment deleted!</h4>

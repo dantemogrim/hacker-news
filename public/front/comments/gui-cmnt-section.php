@@ -52,7 +52,6 @@ if (isset($_GET['post_id'])) {
 <br>
 
 <?php foreach ($postComments as $postComment) : ?>
-
     <?php
     $ownedBy = false;
     if ($postComment['user_id'] === $_SESSION['loggedIn']['id']) {
