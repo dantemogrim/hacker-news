@@ -40,26 +40,22 @@ if (isset($_GET['new'])) {
             <a class="post-title-link" href="<?= $articlePost['link']; ?>" target=”_blank”><?= $articlePost['title']; ?></a>
         </h5>
         <div class="card-body">
-            <!-- <details>
-                <summary>📓 Click 4 user publisher's details.</summary> -->
             <p class="card-text"><?= $articlePost['description']; ?></p>
-            <!-- </details> -->
-            <br>
+            <span class="badge bg-dark author-tag">Posted by: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
             <div class="d-flex flex-row bd-highlight mb-3">
                 <div class="d-flex align-items-center">
-                    <span class="badge bg-dark">Posted by: <?= $singlePostAuthor['username']; ?> @ <?= $articlePost['created_at']; ?></span>
-                </div>
-                <div class="votes">
-                    <button class="smile" data-id="<?= $articlePost['id'] ?>">
-                        <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>
-                    </button>
-                    <span class="smiles"><?= fetchSmileAmount($articlePost['id'], $pdo) ?> smiles</span>
-                    <a class="" href="/public/front/comments/gui-cmnt-section.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
+                    <div class="votes">
+                        <button class="smile" data-id="<?= $articlePost['id'] ?>">
+                            <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>
+                        </button>
+                        <span class="smiles"><?= fetchSmileAmount($articlePost['id'], $pdo) ?> smiles</span>
+                        <a class="" href="/public/front/comments/gui-cmnt-section.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
+                    </div>
                 </div>
             </div>
 
             <?php if ($ownedBy) : ?>
-                <!-- Edit. -->
+                <!-- Edit if user is publisher. -->
                 <div class="d-flex flex-row bd-highlight mb-3">
                     <form action="/public/front/posts/gui-change-posts.php" method="post">
                         <input type="hidden" name="post_id" id="post_id" value="<?= $articlePost['id']; ?>">

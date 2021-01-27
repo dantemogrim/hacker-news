@@ -13,10 +13,6 @@ body {
   color: var(--textColors);
 }
 
-.main-gif {
-  width: 7vw;
-}
-
 .main-welcome {
   text-align: center;
 }
@@ -42,6 +38,11 @@ div.card {
 .profile-picture {
   width: 30vw;
   height: auto;
+}
+
+.author-tag {
+  margin: 1%;
+  padding: 0.5%;
 }
 
 .navatar {
