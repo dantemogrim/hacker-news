@@ -13,7 +13,7 @@ endif; ?>
 <img class="profile-picture" src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
 
 <br>
-<form action="/public/back/users/avatars/edit-avatar.php" method="post" enctype="multipart/form-data">
+<form action="/public/back/users/avatars/change-avatar.php" method="post" enctype="multipart/form-data">
     <div>
         <label for="avatar">Edit profile picture here:</label>
         <br>

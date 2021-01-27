@@ -37,7 +37,7 @@ if (isset($_GET['new'])) {
     <!-- Article content. -->
     <div class="card">
         <h5 class="card-header"> <small class="tiny-text">URL:</small> 🔗
-            <a class="post-title-link" href="<?= $articlePost['link']; ?>"><?= $articlePost['title']; ?></a>
+            <a class="post-title-link" href="<?= $articlePost['link']; ?>" target=”_blank”><?= $articlePost['title']; ?></a>
         </h5>
         <div class="card-body">
             <!-- <details>

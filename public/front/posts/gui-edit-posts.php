@@ -8,13 +8,15 @@ endif; ?>
 <article>
     <h1>Edit Your Post</h1>
 
-    <form action="/public/back/posts/edit-post.php" method="post">
-        <p>For security reasons - you won't be able to change the original title or link - only the description.</p>
-        <p>This is to protect our users from data that might later be wrongfully manipulated.</p>
 
+    <small>For security reasons you will only be able to change the description.</small>
+    <br>
+
+    <form action="/public/back/posts/edit-post.php" method="post">
         <div class="form-group">
-            <label for="article">Article description:</label>
-            <textarea class="form-control" type="text" name="post_update" id="post_update" rows="3" placeholder="Type your content here." maxlength="300" required></textarea>
+            <label for="article">Article description update:</label>
+            <textarea class="form-control" type="text" name="post-update" id="post-update" rows="3" maxlength="300" required>
+            </textarea>
             <small>(Maximum length is 300 characters long.)</small>
         </div><!-- /form-group -->
 
