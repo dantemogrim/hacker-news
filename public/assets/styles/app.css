@@ -26,6 +26,7 @@ div.card {
 }
 
 .tiny-text {
+  color: darkgreen;
   text-shadow: 4px 4px 8px blue;
 }
 
