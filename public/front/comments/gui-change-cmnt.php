@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__ . '/../../header.php';
 
 if (!isset($_SESSION['loggedIn'])) {
