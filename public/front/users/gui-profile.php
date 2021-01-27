@@ -10,7 +10,7 @@ endif; ?>
 <br>
 
 <?php $path = '/public/back/users/avatars/store/'; ?>
-<img class="profile-picture" src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
+<img alt="Your chosen profile picture is viewed here. If you haven't uploaded one yet, it'll be an avatar placeholder picturing a simple cartoon face." class="profile-picture" src="<?= $path . $_SESSION['loggedIn']['avatar']; ?> ">
 
 <br>
 <form action="/public/back/users/avatars/change-avatar.php" method="post" enctype="multipart/form-data">

@@ -1,6 +1,6 @@
 <footer id="footer">
     <div class="container footer-container">
-        <div class="row align-items-center footer-container">
+        <div class="d-flex justify-content-around">
             <div class="col">
                 <a href="#"><img class="footerIcons" src="/public/resources/media/icons/info.png"></a>
             </div>

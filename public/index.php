@@ -53,7 +53,7 @@ if (isset($_GET['new'])) {
                     <button class="smile" data-id="<?= $articlePost['id'] ?>">
                         <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>
                     </button>
-                    <span class="smiles"><?= fetchSmileAmount($articlePost['id'], $pdo) ?></span>
+                    <span class="smiles"><?= fetchSmileAmount($articlePost['id'], $pdo) ?> smiles</span>
                     <a class="" href="/public/front/comments/gui-cmnt-section.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
                 </div>
             </div>

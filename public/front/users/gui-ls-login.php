@@ -7,7 +7,7 @@
         <?php foreach ($_SESSION['errors'] as $error) : ?>
             <?php echo $error; ?>
         <?php endforeach; ?>
-        <?php unset($error) ?>
+        <?php unset($_SESSION['errors']) ?>
     <?php endif; ?>
 
     <form action="/public/back/users/login.php" method="post">
