@@ -9,15 +9,12 @@ if (!isset($_SESSION['loggedIn'])) :
     redirect('/public/front/users/gui-ls-login.php');
 endif;
 
-if (isset($_POST['post_id'], $_POST['user_id'], $_POST['comment_id'])) {
-    $postId = trim(filter_var($_POST['post_id'], FILTER_SANITIZE_STRING));
+if (isset($_POST['user_id'], $_POST['comment_id'])) {
     $authorId = (int)trim(filter_var($_POST['user_id'], FILTER_SANITIZE_STRING));
     $commentId = trim(filter_var($_POST['comment_id'], FILTER_SANITIZE_STRING));
     $id = (int)$_SESSION['loggedIn']['id'];
 
     if ($authorId !== $id) {
-        echo 'UH-OH!';
-        exit();
         redirect('/../public/index.php');
     }
 

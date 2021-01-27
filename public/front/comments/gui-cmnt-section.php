@@ -26,6 +26,13 @@ if (isset($_GET['post_id'])) {
     <div class="card-body">
         <p class="card-text"><?= $post['description']; ?></p>
         <span class="badge bg-dark">By: <?= fetchAlias($post['user_id'], $pdo) ?> <?= $post['created_at']; ?></span>
+        <div class="votes">
+            <button class="smile" data-id="<?= $post['id'] ?>">
+                <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>
+            </button>
+            <span class="smiles"><?= fetchSmileAmount($post['id'], $pdo) ?> smiles</span>
+            <a class="" href="/public/front/comments/gui-cmnt-section.php?post_id=<?= $post['id'] ?>">Comment Section</a>
+        </div>
     </div>
 </div>
 
@@ -62,14 +69,12 @@ if (isset($_GET['post_id'])) {
                 <!-- Edit. -->
                 <div class="d-flex flex-row bd-highlight mb-3">
                     <form action="/public/front/comments/gui-change-cmnt.php" method="post">
-                        <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
                         <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>
                     </form>
                     <!-- Delete. -->
                     <form action="/public/back/comments/delete-cmnt.php" method="post">
-                        <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
                         <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/eraser-bold.png"></button>

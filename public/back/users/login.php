@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-$_SESSION['errors'] = [];
 
 // Check if e-mail & passphrase exist in the post request.
 if (isset($_POST['username'], $_POST['passphrase'])) {
@@ -25,13 +24,14 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     if (!$user) {
-        $_SESSION['errors'] = 'There is no account registered to that username.';
+        $_SESSION['errors'][] = 'There is no account registered to that username.';
     }
 
     if (!password_verify($passphrase, $user['passphrase'])) {
-        echo 'Wrong password.';
-        exit();
+        $_SESSION['errors'][] = "Wrong password!";
+        redirect('/public/front/users/gui-ls-login.php');
     }
+
     // If all goes well, create a session for the user as logged in.
     if (isset($user['passphrase']) && password_verify($passphrase, $user['passphrase'])) {
         $_SESSION['loggedIn'] = [

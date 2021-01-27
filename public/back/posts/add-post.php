@@ -21,7 +21,7 @@ if (isset($_POST['title'], $_POST['article'], $_POST['link'])) :
     }
 
     $userId = $_SESSION['loggedIn']['id'];
-    $createdAt = date("Ymd");
+    $createdAt = date('Ymd H:i:s');
 
     // Insert into SQLite database.
     $statement = $pdo->prepare('INSERT INTO posts (title, description, link, created_at, user_id)
