@@ -27,4 +27,4 @@ if (isset($_POST['comment'], $_POST['post_id'])) :
     $statement->execute();
 
 endif;
-redirect("../../front/comments/gui-comment-section.php?post_id=$postId");
+redirect("../../front/comments/gui-cmnt-section.php?post_id=$postId");

@@ -54,14 +54,14 @@ if (isset($_GET['new'])) {
                         <span class="badge rounded-pill bg-warning text-dark"><img class="like-icon" src="/public/resources/media/icons/smiley.png"></span>
                     </button>
                     <span class="smiles"><?= fetchSmileAmount($articlePost['id'], $pdo) ?></span>
-                    <a class="" href="/public/front/comments/gui-comment-section.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
+                    <a class="" href="/public/front/comments/gui-cmnt-section.php?post_id=<?= $articlePost['id'] ?>">Comment Section</a>
                 </div>
             </div>
 
             <?php if ($ownedBy) : ?>
                 <!-- Edit. -->
                 <div class="d-flex flex-row bd-highlight mb-3">
-                    <form action="/public/front/posts/gui-edit-posts.php" method="post">
+                    <form action="/public/front/posts/gui-change-posts.php" method="post">
                         <input type="hidden" name="post_id" id="post_id" value="<?= $articlePost['id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $articlePost['user_id']; ?>">
                         <button type="submit" class="btn btn-light p-2 bd-highlight"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>

@@ -37,10 +37,10 @@ endif; ?>
 
 <div class="list-group">
     <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-        ⚙️
+        ⚙️ Settings
     </a>
-    <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Account Settings</a>
-    <a href="/public/front/users/gui-change-bio.php" class="list-group-item list-group-item-action">Edit Bio</a>
-    <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Manage Comments</a>
-    <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Manage Posts</a>
+    <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Account</a>
+    <a href="/public/front/users/gui-change-bio.php" class="list-group-item list-group-item-action">Bio</a>
+    <!-- <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Comments</a>
+    <a href="/public/front/users/gui-acc-settings.php" class="list-group-item list-group-item-action">Posts</a> -->
 </div>

@@ -8,7 +8,7 @@ endif; ?>
 <article>
     <h1>Edit Bio</h1>
 
-    <form action="/public/back/users/edit-bio.php" method="post">
+    <form action="/public/back/users/change-bio.php" method="post">
         <div class="form-group">
             <label for="article">Type in your new bio here:</label>
             <textarea class="form-control" type="text" name="bio" id="bio" rows="3" placeholder="" required></textarea>

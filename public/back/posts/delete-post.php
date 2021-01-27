@@ -35,4 +35,4 @@ if (isset($_POST['post_id'], $_POST['user_id'])) {
     setSessionData($id, $pdo);
 }
 
-redirect('/../public/front/posts/gui-delete-confirm.php');
+redirect('/../public/front/posts/gui-confirm-delete.php');

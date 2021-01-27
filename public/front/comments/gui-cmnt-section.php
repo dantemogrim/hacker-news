@@ -31,7 +31,7 @@ if (isset($_GET['post_id'])) {
 
 <br>
 <!-- Comment input field. -->
-<form action="/public/back/comments/add-comment.php" method="post">
+<form action="/public/back/comments/add-cmnt.php" method="post">
     <div class="form-group">
         <label for="comment">
             <h3>Comment this post:</h3>
@@ -61,14 +61,14 @@ if (isset($_GET['post_id'])) {
             <?php if ($ownedBy) : ?>
                 <!-- Edit. -->
                 <div class="d-flex flex-row bd-highlight mb-3">
-                    <form action="/public/front/posts/gui-edit-posts.php" method="post">
+                    <form action="/public/front/comments/gui-change-cmnt.php" method="post">
                         <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
                         <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil-bold.png"></button>
                     </form>
                     <!-- Delete. -->
-                    <form action="/public/back/comments/delete-comment.php" method="post">
+                    <form action="/public/back/comments/delete-cmnt.php" method="post">
                         <input type="hidden" name="post_id" id="post_id" value="<?= $postComment['post_id']; ?>">
                         <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">

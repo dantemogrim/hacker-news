@@ -12,7 +12,7 @@ endif; ?>
     <small>For security reasons you will only be able to change the description.</small>
     <br>
 
-    <form action="/public/back/posts/edit-post.php" method="post">
+    <form action="/public/back/posts/change-post.php" method="post">
         <div class="form-group">
             <label for="article">Article description update:</label>
             <textarea class="form-control" type="text" name="post-update" id="post-update" rows="3" maxlength="300" required>

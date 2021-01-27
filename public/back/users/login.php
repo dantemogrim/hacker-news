@@ -6,11 +6,6 @@ require __DIR__ . '/../autoload.php';
 
 $_SESSION['errors'] = [];
 
-// Check if user got here properly.
-if (!isset($_SESSION['loggedIn'])) :
-    redirect('/public/front/users/gui-ls-login.php');
-endif;
-
 // Check if e-mail & passphrase exist in the post request.
 if (isset($_POST['username'], $_POST['passphrase'])) {
     $username = trim(filter_var($_POST['username'], FILTER_SANITIZE_STRING));
@@ -31,7 +26,6 @@ if (isset($_POST['username'], $_POST['passphrase'])) {
 
     if (!$user) {
         $_SESSION['errors'] = 'There is no account registered to that username.';
-        exit();
     }
 
     if (!password_verify($passphrase, $user['passphrase'])) {
