@@ -13,10 +13,12 @@ body {
   color: var(--textColors);
 }
 
+/* Index page H1. */
 .main-welcome {
   text-align: center;
 }
 
+/* For articles description text to override the set color variable.*/
 div.card {
   color: black;
 }
@@ -45,6 +47,7 @@ div.card {
   padding: 0.5%;
 }
 
+/* Users avatar in the nav. */
 .navatar {
   border-radius: 50%;
   width: 3vw;
