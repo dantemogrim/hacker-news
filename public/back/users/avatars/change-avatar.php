@@ -11,7 +11,6 @@ if (isset($_FILES['avatar'])) {
     $destination = $uploadedDir . $profilePictureName;
     $id = $_SESSION['loggedIn']['id'];
     move_uploaded_file($avatar['tmp_name'], $destination);
-
     if ($avatar['size'] >= 30000000) {
         $_SESSION['errors'][] = "Your file exceeds the size limit. Try something smaller.";
         redirect('/public/front/users/gui-profile.php');
