@@ -16,7 +16,6 @@ if (isset($_FILES['avatar'])) {
         $_SESSION['errors'][] = "Your file exceeds the size limit. Try something smaller.";
         redirect('/public/front/users/gui-profile.php');
     } else {
-
         $sql = "UPDATE users SET avatar = :avatar WHERE id = :id";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':id', $id, PDO::PARAM_INT);
