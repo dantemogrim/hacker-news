@@ -54,7 +54,7 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 ## :computer: Testers
 
 - [Réka Madarasz](https://github.com/mreka91)
-- [Person 2](https://github.com/mogrim-91)
+- [Ida From](https://github.com/Fvrom)
 
 ## :mag: Code Review
 
