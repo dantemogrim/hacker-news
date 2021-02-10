@@ -18,5 +18,11 @@ endif; ?>
         </a>
     </div>
 
+    <div class="alert alert-primary" role="alert">
+        <a href="/public/front/users/gui-delete-account.php">
+            <p> Do you want to delete your account? </p>
+        </a>
+    </div>
+
 
 </ul>
