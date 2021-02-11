@@ -58,23 +58,30 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 
 ## :mag: Code Review
 
-- By [Victor Stranne](https://github.com/Vstranne)
+<b>By [Victor Stranne](https://github.com/Vstranne)</b>
+
 - [ ] **index.php:L25-27**I personally prefer not having too much logic in the same file as my HTML. Instead of doing the database query here you could've define a function in your functions.php and instead just do something like: "$postAuthor = postAuthor($pdo, $articlePost['user_id'];".
-- [ ] **header.php:L18** You have a commented line here which you don't seem to use at all, perhaps remove it entirely to make the code look even more awesome!
+- [x] **header.php:L18** You have a commented line here which you don't seem to use at all, perhaps remove it entirely to make the code look even more awesome!
 - [ ] **functions.php:L97-99**Instead of ordering by newest with PHP perhaps you could order them directly with the SQL query. Just add "ORDER BY comment_created DESC" at the end of your SQL query! (You might need to add timestamps in seconds in the database table column in order for this to work, but it would be cleaner code ;) )
 - [x] **media-queries.css** This file doesn't contain anything :( perhaps just remove it!
 - [x] **/posts/gui-add-confirm.php** also empty :(
 - [ ] **index.php:L24**In general I like your naming in the code, but here you write "foreach ($allPosts as $articlePost)", I prefer to have the same name and just change from plural to singular, "foreach($posts as $post)". I think it makes it easier to read!
 - [ ] The first thing you meet when entering the site is a login screen, for future sites like this perhaps let people access some of the content without making an account to keep them on the site.
 - [ ] The naming on some of your files isn't intuitive for me of what it actually is, perhaps don't use abbreviations when naming files, or anything at all!
-- [ ] Your code is well commented, not too much but where it's needed, keep it up!
-- [ ] You have a great structure in your project :) great job!
+- [x] Your code is well commented, not too much but where it's needed, keep it up!
+- [x] You have a great structure in your project :) great job!
   > "I think you've done a really good job here, the site looks awesome and the code is very well written!" - Victor Stranne
+
+## :sparkles: Bonus Feature
+
+<b>By [Agnes Binett](https://github.com/aagneess)</b>
+An add on that makes it possible for users to delete their account along with all data stored onto that particular user.
+<i>Link to the pull request, [here](https://github.com/mogrim-91/Hacker-News/pull/2).</i>
 
 ## :man_technologist: Creator
 
-- [Dante Mogrim](https://github.com/mogrim-91)
+<b>[Dante Mogrim](https://github.com/mogrim-91)</b>
 
 ## :fleur_de_lis: License
 
-- [MIT](https://en.wikipedia.org/wiki/MIT_License)
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
