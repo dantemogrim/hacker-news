@@ -5,9 +5,7 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 if (isset($_POST['submit'])) {
-
     $userId = (int)$_SESSION['loggedIn']['id'];
-    
     $sql = "SELECT passphrase FROM users WHERE id = :id";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':id', $userId, PDO::PARAM_STR);
@@ -30,7 +28,5 @@ if (isset($_POST['submit'])) {
     $statement->execute();
 
     session_destroy();
-
 }
 redirect('/public/index.php');
-
