@@ -1,5 +1,5 @@
-<!-- The header is put together with autoload which activates
-the essential functionality of the site. -->
+<!-- The header connected to autoload which triggers
+the backend functionality of the site. -->
 <?php require __DIR__ . '/header.php';
 
 // Is the user logged in?

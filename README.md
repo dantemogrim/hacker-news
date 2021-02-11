@@ -76,7 +76,7 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 
 <b>By [Agnes Binett](https://github.com/aagneess)</b><br>
 
-- An add on that makes it possible for users to delete their account along with all data stored onto that particular user.<br>
+- An add on making it possible for users to delete their account along with all data stored onto that particular user.<br>
 - <i>Link to the pull request, [here](https://github.com/mogrim-91/Hacker-News/pull/2).</i>
 
 ## :man_technologist: Creator
