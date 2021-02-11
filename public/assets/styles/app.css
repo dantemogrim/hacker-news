@@ -38,8 +38,10 @@ div.card {
 }
 
 .profile-picture {
-  width: 30vw;
   height: auto;
+  max-width: 300px;
+  padding: 3%;
+  width: 30vw;
 }
 
 .author-tag {
