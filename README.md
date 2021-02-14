@@ -42,6 +42,12 @@ This is an individual school assignment with a main focus on PHP. We were suppos
 
 </details>
 
+<details><summary> :robot: <b>Database structure:</b> </summary>
+
+<img src="/public/resources/media/db.png">
+
+</details>
+
 ## :octocat: Instructions
 
 _ATTN: A prerequisite - In order to do this you will need to have PHP installed on your computer._
