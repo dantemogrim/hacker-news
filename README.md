@@ -6,7 +6,7 @@
 
 This is an individual school assignment with a main focus on PHP. We were supposed to create a new and improved clone of the website [Hacker News](https://news.ycombinator.com/news). The project had to include the default features of the original page plus the following user stories and requirements:
 
-<details><summary> :bust_in_silhouette: <b>User stories:</b></summary>
+<details><summary> :bust_in_silhouette: <b> User stories:</b></summary>
 
 - As a user I should be able to create an account.
 - As a user I should be able to login.
@@ -26,7 +26,7 @@ This is an individual school assignment with a main focus on PHP. We were suppos
 
 </details>
 
-<details><summary> :books: <b>Requirements:</b> </summary>
+<details><summary> :books: <b> Requirements:</b> </summary>
 
 - The application should be written in HTML, CSS, JavaScript, SQL and PHP.
 - The application should be built using a SQLite database with at least four different tables.
@@ -42,7 +42,7 @@ This is an individual school assignment with a main focus on PHP. We were suppos
 
 </details>
 
-<details><summary> :robot: <b>Database structure:</b> </summary>
+<details><summary> :robot: <b> Database structure:</b> </summary>
 
 <img src="/public/resources/media/db.png">
 
