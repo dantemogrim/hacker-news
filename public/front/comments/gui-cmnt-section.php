@@ -6,7 +6,6 @@ if (!isset($_SESSION['loggedIn'])) :
     redirect('/public/front/users/gui-ls-login.php');
 endif;
 
-
 if (isset($_GET['post_id'])) {
     $postId = (int)filter_var($_GET['post_id'], FILTER_SANITIZE_NUMBER_INT);
     $post = fetchOnePost($postId, $pdo);
@@ -14,7 +13,6 @@ if (isset($_GET['post_id'])) {
 } else {
     // redirect user
 }
-
 ?>
 
 <!-- Post. -->
@@ -50,18 +48,39 @@ if (isset($_GET['post_id'])) {
 </form>
 <br>
 
+
 <?php foreach ($postComments as $postComment) : ?>
-    <?php
-    $ownedBy = false;
-    if ($postComment['user_id'] === $_SESSION['loggedIn']['id']) {
-        $ownedBy = true;
-    } ?>
+
+<?php
+
+    $commentId = $postComment['id'];
+    $replies = fetchReplies($commentId, $pdo);
+
+?>
 
     <!-- Comment card. -->
     <div class="card">
-        <h5 class="card-header">by: <?= fetchAlias($postComment['user_id'], $pdo); ?></h5>
         <div class="card-body">
             <p class="card-text"><?= $postComment['text']; ?></p>
+
+    <!-- Replies section -->
+    <?php foreach($replies as $reply) : ?>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text"><?= $reply['reply']; ?></p>
+                <span class="badge bg-dark">By: <?= $reply['username']; ?> <?= $reply['reply_created']; ?></span>
+            </div>
+        </div>
+    <br>
+
+    <?php endforeach; ?>
+       <!-- End of section -->
+
+    <?php    
+        $ownedBy = false;
+        if ($postComment['user_id'] === $_SESSION['loggedIn']['id']) {
+        $ownedBy = true;
+    }?>
 
             <?php if ($ownedBy) : ?>
                 <!-- Edit. -->
@@ -77,12 +96,14 @@ if (isset($_GET['post_id'])) {
                         <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
                         <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/trash.png"></button>
                     </form>
-                </div>
             <?php endif; ?>
-        </div>
-    </div>
 
-    <br>
-<?php endforeach ?>
+                <!-- Link to reply page. -->
+                        <button type="submit" class="btn btn-light"><a class="" href="/public/front/comments/gui-reply-cmnt.php?comment_id=<?= $postComment['id'] ?>&post_id=<?= $_GET['post_id'] ?>">Reply</a></button>
+                    </div>
+                </div>
+                <br>
+
+<?php endforeach; ?>
 
 <?php require __DIR__ . '/../../footer.php'; ?>
