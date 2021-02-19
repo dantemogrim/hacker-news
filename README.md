@@ -80,10 +80,13 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 
 ## :sparkles: Bonus Feature
 
-<b>By [Agnes Binett](https://github.com/aagneess)</b><br>
+<b>By [Agnes Binett](https://github.com/aagneess)</b> - Thank you! :rose:
+<br>
 
 - An add on making it possible for users to delete their account along with all data stored onto that particular user.<br>
-- <i>Link to the pull request, [here](https://github.com/mogrim-91/Hacker-News/pull/2).</i>
+  <i>Link to the pull request, [here](https://github.com/mogrim-91/Hacker-News/pull/2).</i>
+- An second feature making it possible for users to reply to comments.<br>
+  <i>Link to the pull request, [here](https://github.com/mogrim-91/Hacker-News/pull/3).</i>
 
 ## :man_technologist: Creator
 
