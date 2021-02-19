@@ -42,7 +42,7 @@ if (isset($_GET['post_id'])) {
 <form action="/public/back/comments/add-cmnt.php" method="post">
     <div class="form-group">
         <label for="comment">
-            <h3>Comment:</h3>
+            <h3>Add comment:</h3>
         </label>
         <textarea class="form-control" type="text" name="comment" id="comment" rows="3" placeholder="Your text here." required></textarea>
         <input type="hidden" name="post_id" id="post_id" value="<?= $postId ?>" maxlength="300">
@@ -53,8 +53,6 @@ if (isset($_GET['post_id'])) {
 <br>
 <br>
 
-<h3>Other people have commented:</h3>
-
 <?php foreach ($postComments as $postComment) : ?>
 
     <?php
@@ -64,54 +62,61 @@ if (isset($_GET['post_id'])) {
 
     ?>
 
-    <!-- Comment card. -->
+    <!-- Comment cards. -->
     <div class="card">
-        <h5 class="card-header">by: <?= fetchAlias($postComment['user_id'], $pdo); ?></h5>
+        <h5 class="card-header comment-by">Comment by: <?= fetchAlias($postComment['user_id'], $pdo); ?> @ <?= $postComment['comment_created']; ?></h5>
         <div class="card-body">
             <p class="card-text"><?= $postComment['text']; ?></p>
-        </div>
-        <br>
-        <p>Replies:</p>
 
-        <!-- Replies section -->
-        <?php foreach ($replies as $reply) : ?>
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-text"><?= $reply['reply']; ?></p>
-                    <span class="badge bg-dark">By: <?= $reply['username']; ?> <?= $reply['reply_created']; ?></span>
+            <?php
+            $ownedBy = false;
+            if ($postComment['user_id'] === $_SESSION['loggedIn']['id']) {
+                $ownedBy = true;
+            } ?>
+
+            <?php if ($ownedBy) : ?>
+                <!-- Edit. -->
+                <div class="edit-delete d-flex flex-row bd-highlight">
+                    <form action="/public/front/comments/gui-change-cmnt.php" method="post">
+                        <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
+                        <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
+                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil.png"></button>
+                    </form>
+                    <!-- Delete. -->
+                    <form action="/public/back/comments/delete-cmnt.php" method="post">
+                        <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
+                        <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
+                        <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/trash.png"></button>
+                    </form>
                 </div>
-            </div>
-            <br>
-
-        <?php endforeach; ?>
-        <!-- End of section -->
-
-        <?php
-        $ownedBy = false;
-        if ($postComment['user_id'] === $_SESSION['loggedIn']['id']) {
-            $ownedBy = true;
-        } ?>
-
-        <?php if ($ownedBy) : ?>
-            <!-- Edit. -->
-            <div class="d-flex flex-row bd-highlight mb-3">
-                <form action="/public/front/comments/gui-change-cmnt.php" method="post">
-                    <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
-                    <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
-                    <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/pencil.png"></button>
-                </form>
-                <!-- Delete. -->
-                <form action="/public/back/comments/delete-cmnt.php" method="post">
-                    <input type="hidden" name="user_id" id="user_id" value="<?= $postComment['user_id']; ?>">
-                    <input type="hidden" name="comment_id" id="comment_id" value="<?= $postComment['id']; ?>">
-                    <button type="submit" class="btn btn-light"><img class="like-icon" src="/public/resources/media/icons/trash.png"></button>
-                </form>
             <?php endif; ?>
 
-            <!-- Link to reply page. -->
+            <?php
+            $ownedBy = false;
+            if ($postComment['user_id'] === $_SESSION['loggedIn']['id']) {
+                $ownedBy = true;
+            } ?>
+
             <button type="submit" class="btn btn-light"><a class="" href="/public/front/comments/gui-reply-cmnt.php?comment_id=<?= $postComment['id'] ?>&post_id=<?= $_GET['post_id'] ?>">Reply</a></button>
-            </div>
+        </div>
     </div>
+    <br>
+
+    <!-- Replies. -->
+    <?php foreach ($replies as $reply) : ?>
+        <div class="reply-card card">
+            <h5 class="card-header reply-by">Reply by: <?= $reply['username']; ?> <?= $reply['reply_created']; ?></h5>
+            <div class="card-body">
+                <p class="card-text"><?= $reply['reply']; ?></p>
+            </div>
+        </div>
+        <br>
+
+    <?php endforeach; ?>
+    <!-- End of section -->
+
+
+
     <br>
 
 <?php endforeach; ?>

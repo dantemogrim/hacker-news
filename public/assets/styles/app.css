@@ -37,6 +37,10 @@ div.card {
   width: 3vw;
 }
 
+.reply-card {
+  left: 50px;
+}
+
 .profile-picture {
   height: auto;
   max-width: 300px;
@@ -47,6 +51,14 @@ div.card {
 .author-tag {
   margin: 1%;
   padding: 0.5%;
+}
+
+.comment-by {
+  color: deeppink;
+}
+
+.reply-by {
+  color: royalblue;
 }
 
 /* Users avatar in the nav. */
@@ -70,6 +82,10 @@ div.card {
   background-color: white;
   border: none;
   outline: none;
+}
+
+.edit-delete {
+  margin: 1%;
 }
 
 .footer-container {
