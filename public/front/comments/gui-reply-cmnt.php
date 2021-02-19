@@ -11,7 +11,6 @@ $postId = (int)$_GET['post_id'];
 $comments = fetchComment($commentId, $pdo);
 
 foreach ($comments as $comment) : ?>
-
     <article>
         <h1>Reply to this comment:</h1>
         <br>

@@ -120,7 +120,6 @@ function fetchSmileAmount(string $postId, PDO $pdo): string
     return $smiles['likes'];
 }
 
-
 function fetchAllSmiles(PDO $pdo): array
 {
     $allPosts = fetchAllPosts($pdo);
@@ -146,7 +145,6 @@ function fetchAllSmiles(PDO $pdo): array
 }
 
 // Fetch comment for replies
-
 function fetchComment(int $commentId, PDO $pdo): array
 {
     $statement = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
@@ -159,11 +157,9 @@ function fetchComment(int $commentId, PDO $pdo): array
 
     $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $comments;
-
 }
 
 // Fetch replies to comments
-
 function fetchReplies(int $commentId, PDO $pdo): array
 {
     $statement = $pdo->prepare('SELECT * FROM replies WHERE comment_id = :comment_id');
@@ -176,5 +172,4 @@ function fetchReplies(int $commentId, PDO $pdo): array
 
     $replies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $replies;
-
 }

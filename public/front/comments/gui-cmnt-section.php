@@ -54,7 +54,6 @@ if (isset($_GET['post_id'])) {
 <br>
 
 <?php foreach ($postComments as $postComment) : ?>
-
     <?php
 
     $commentId = $postComment['id'];
