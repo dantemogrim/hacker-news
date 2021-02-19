@@ -144,3 +144,37 @@ function fetchAllSmiles(PDO $pdo): array
 
     return $allPostsWithSmiles;
 }
+
+// Fetch comment for replies
+
+function fetchComment(int $commentId, PDO $pdo): array
+{
+    $statement = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
+    $statement->bindParam(":id", $commentId, PDO::PARAM_INT);
+    $statement->execute();
+
+    if (!$statement) {
+        die(var_dump($pdo->errorInfo()));
+    }
+
+    $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $comments;
+
+}
+
+// Fetch replies to comments
+
+function fetchReplies(int $commentId, PDO $pdo): array
+{
+    $statement = $pdo->prepare('SELECT * FROM replies WHERE comment_id = :comment_id');
+    $statement->bindParam(":comment_id", $commentId, PDO::PARAM_INT);
+    $statement->execute();
+
+    if (!$statement) {
+        die(var_dump($pdo->errorInfo()));
+    }
+
+    $replies = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $replies;
+
+}
