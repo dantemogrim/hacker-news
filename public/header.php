@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="/public/assets/styles/app.css">
     <!-- @font-face insertion. -->
     <link rel="stylesheet" href="/public/assets/styles/fonts.css">
-    <!-- Media queries insertion. -->
-    <!--link rel="stylesheet" href="../assets/styles/media.css">-->
     <!-- Modern-Normalize CSS insertion. -->
     <link rel="stylesheet" href="/public/assets/styles/modern-normalize.css">
     <!-- Favicon -->
