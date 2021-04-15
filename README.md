@@ -90,7 +90,7 @@ _ATTN: A prerequisite - In order to do this you will need to have PHP installed 
 
 ## :man_technologist: Creator
 
-<b>[Dante Mogrim](https://github.com/mogrim-91)</b>
+<b>[Dante Mogrim](https://github.com/dantemogrim)</b>
 
 ## :fleur_de_lis: License
 
